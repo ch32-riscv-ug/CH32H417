@@ -15,7 +15,7 @@ cd datasheet_zh
 # https://www.wch.cn/downloads/CH32H417DS0_PDF.html
 curl -z CH32H417DS0.PDF -o CH32H417DS0.PDF https://www.wch.cn/download/file?id=529
 # https://www.wch.cn/downloads/CH32H417RM_PDF.html
-#curl -z CH32H417RM.PDF -o CH32H417RM.PDF https://www.wch.cn/download/file?id=532
+curl -z CH32H417RM.PDF -o CH32H417RM.PDF https://www.wch.cn/download/file?id=532
 cd ..
 
 # https://www.wch.cn/downloads/CH32H417EVT_ZIP.html

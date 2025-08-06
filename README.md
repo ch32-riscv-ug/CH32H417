@@ -6,8 +6,8 @@
 - https://www.wch.cn/products/CH32H417.html
 
 ## Datasheet
-- en [[CH32V20x_30xDS0.PDF](https://ch32-riscv-ug.github.io/CH32V307/datasheet_en/CH32V20x_30xDS0.PDF)] [[CH32FV2x_V3xRM.PDF](https://ch32-riscv-ug.github.io/CH32V307/datasheet_en/CH32FV2x_V3xRM.PDF)]
-- zh [[CH32V20x_30xDS0.PDF](https://ch32-riscv-ug.github.io/CH32V307/datasheet_zh/CH32V20x_30xDS0.PDF)] [[CH32FV2x_V3xRM.PDF](https://ch32-riscv-ug.github.io/CH32V307/datasheet_zh/CH32FV2x_V3xRM.PDF)]
+- en [[CH32H417DS0.PDF](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF)]
+- zh [[CH32H417DS0.PDF](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF)]
 
 ## System Block Diagram
 
