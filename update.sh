@@ -110,6 +110,8 @@ finish() {
 cd datasheet_en
 # https://www.wch-ic.com/downloads/CH32H417DS0_PDF.html
 fetch "https://www.wch-ic.com/download/file?id=423" CH32H417DS0.PDF
+# https://www.wch-ic.com/downloads/CH32H417RM_PDF.html
+fetch "https://www.wch-ic.com/download/file?id=435" CH32H417RM.PDF
 cd ..
 
 # https://www.wch.cn/products/CH32H417.html
