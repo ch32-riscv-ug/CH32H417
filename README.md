@@ -4,11 +4,11 @@
 
 ## Series
 
-| Series | Core | ISA | Flash | SRAM | Packages | Products | Official |
-|---|---|---|---|---|---|---|---|
-| **CH32H415** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 960K | 128K | QFN60X6 | 1 | [en](https://www.wch-ic.com/products/CH32H415.html) / [zh](https://www.wch.cn/products/CH32H415.html) |
-| **CH32H416** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 480K | 128K | QFN60X6 | 1 | [en](https://www.wch-ic.com/products/CH32H416.html) / [zh](https://www.wch.cn/products/CH32H416.html) |
-| **CH32H417** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 960K | 128K | QFN128,QFN68,QFN88 | 3 | [en](https://www.wch-ic.com/products/CH32H417.html) / [zh](https://www.wch.cn/products/CH32H417.html) |
+| Series | Core | ISA | Flash | SRAM | Max clock | VDD | Packages | Products | Official |
+|---|---|---|---|---|---|---|---|---|---|
+| **CH32H415** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 960K | 128K | 400/500 MHz | - | QFN60X6 | 1 | [en](https://www.wch-ic.com/products/CH32H415.html) / [zh](https://www.wch.cn/products/CH32H415.html) |
+| **CH32H416** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 480K | 128K | 400/500 MHz | - | QFN60X6 | 1 | [en](https://www.wch-ic.com/products/CH32H416.html) / [zh](https://www.wch.cn/products/CH32H416.html) |
+| **CH32H417** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 960K | 128K | 400/500 MHz | - | QFN128,QFN68,QFN88 | 3 | [en](https://www.wch-ic.com/products/CH32H417.html) / [zh](https://www.wch.cn/products/CH32H417.html) |
 
 ## Debug / serial defaults
 
@@ -546,6 +546,11 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 | CH32H417 | UHSIF_PORT_REMAP | PCFR1 | 8;9 | 0;1;2;3 |  |
 
 </details>
+
+## Errata
+
+- The blue-marked sections of the clock tree diagram in the datasheet are not applicable (they only apply to chips whose 5th lot-number digit is greater than 0). *(applies: CH32H415, CH32H416, CH32H417; 5th digit of lot number = 0)*
+- GPHA, Ethernet, SerDes and CAN functions are not provided. *(applies: CH32H415, CH32H416, CH32H417; 5th digit of lot number = 0)*
 
 ## Diagrams
 
