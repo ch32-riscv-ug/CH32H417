@@ -4,7 +4,7 @@
 
 ## Series
 
-| Series | Core | ISA | Flash | SRAM | Max clock | VDD | Packages | Products | Official |
+| Series | Core | ISA | Flash | SRAM | Clock | VDD | Packages | Products | Official |
 |---|---|---|---|---|---|---|---|---|---|
 | **CH32H415** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 960K | 128K | 400/500 MHz | - | QFN60X6 | 1 | [en](https://www.wch-ic.com/products/CH32H415.html) / [zh](https://www.wch.cn/products/CH32H415.html) |
 | **CH32H416** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 480K | 128K | 400/500 MHz | - | QFN60X6 | 1 | [en](https://www.wch-ic.com/products/CH32H416.html) / [zh](https://www.wch.cn/products/CH32H416.html) |
@@ -25,6 +25,18 @@
 | CH32H417DS0.PDF | datasheet | [page](https://www.wch-ic.com/downloads/CH32H417DS0_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF) v1.8 | [page](https://www.wch.cn/downloads/CH32H417DS0_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF) v1.8 |
 | CH32H417RM.PDF | reference-manual | [page](https://www.wch-ic.com/downloads/CH32H417RM_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417RM.PDF) v1.7 | [page](https://www.wch.cn/downloads/CH32H417RM_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417RM.PDF) v1.7 |
 | CH32H417EVT.ZIP | evt | [page](https://www.wch-ic.com/downloads/CH32H417EVT_ZIP.html) [mirror](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT) v1.3 | [page](https://www.wch.cn/downloads/CH32H417EVT_ZIP.html) [mirror](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT) v1.5 |
+
+## Pinouts
+
+Pinout drawings are in the datasheet (chapter *Pinouts*):
+
+| Package | Products | Datasheet | Outline |
+|---|---|---|---|
+| QFN60X6 | CH32H415REU6 | [en](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF) / [zh](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF) | [drawing](https://raw.githubusercontent.com/ch32-riscv-ug/WCH-common/main/image/package_QFN60X6.png) |
+| QFN60X6 | CH32H416RDU6 | [en](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF) / [zh](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF) | [drawing](https://raw.githubusercontent.com/ch32-riscv-ug/WCH-common/main/image/package_QFN60X6.png) |
+| QFN88 | CH32H417MEU6 | [en](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF) / [zh](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF) | [drawing](https://raw.githubusercontent.com/ch32-riscv-ug/WCH-common/main/image/package_QFN88.png) |
+| QFN128 | CH32H417QEU6 | [en](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF) / [zh](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF) | [drawing](https://raw.githubusercontent.com/ch32-riscv-ug/WCH-common/main/image/package_QFN128.png) |
+| QFN68 | CH32H417WEU6 | [en](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF) / [zh](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF) | [drawing](https://raw.githubusercontent.com/ch32-riscv-ug/WCH-common/main/image/package_QFN68.png) |
 
 ## Product comparison
 
@@ -540,28 +552,34 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 
 | Series | Field | Register | Bits | Values | Reset |
 |---|---|---|---|---|---|
-| CH32H416 | SDMMC_REMAP | PCFR1 | 10;11 | 0;1;2;3 |  |
-| CH32H417 | SDMMC_REMAP | PCFR1 | 10;11 | 0;1;2;3 |  |
-| CH32H417 | UHSIF_CLK_REMAP | PCFR1 | 6;7 | 0;1;2;3 |  |
-| CH32H417 | UHSIF_PORT_REMAP | PCFR1 | 8;9 | 0;1;2;3 |  |
+| CH32H416 | SDMMC_REMAP | PCFR1 | PCFR1:10;PCFR1:11 | 0;1;2;3 |  |
+| CH32H417 | SDMMC_REMAP | PCFR1 | PCFR1:10;PCFR1:11 | 0;1;2;3 |  |
+| CH32H417 | UHSIF_CLK_REMAP | PCFR1 | PCFR1:6;PCFR1:7 | 0;1;2;3 |  |
+| CH32H417 | UHSIF_PORT_REMAP | PCFR1 | PCFR1:8;PCFR1:9 | 0;1;2;3 |  |
 
 </details>
+
+## Block diagrams
+
+### CH32H415
+<img src="image/architecture_CH32H415.png" alt="CH32H415 block diagram" />
+
+### CH32H416
+<img src="image/architecture_CH32H416.png" alt="CH32H416 block diagram" />
+
+### CH32H417
+<img src="image/architecture_CH32H417.png" alt="CH32H417 block diagram" />
 
 ## Errata
 
 - The blue-marked sections of the clock tree diagram in the datasheet are not applicable (they only apply to chips whose 5th lot-number digit is greater than 0). *(applies: CH32H415, CH32H416, CH32H417; 5th digit of lot number = 0)*
 - GPHA, Ethernet, SerDes and CAN functions are not provided. *(applies: CH32H415, CH32H416, CH32H417; 5th digit of lot number = 0)*
 
-## Diagrams
+## EVT examples
 
-### system CH32H417
-<img src="image/system_CH32H417.jpg" />
+233 routines in [EVT/EXAM](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM):
 
-### product CH32H417
-<img src="image/product_CH32H417.jpg" />
-
-### architecture CH32H417
-<img src="image/architecture_CH32H417.png" />
+[ADC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/ADC) 14 · [APPLICATION](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/APPLICATION) 3 · [CAN](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/CAN) 3 · [CPU](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/CPU) 19 · [CRC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/CRC) 1 · [DAC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/DAC) 6 · [DFSDM](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/DFSDM) 11 · [DMA](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/DMA) 4 · [DVP](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/DVP) 3 · [ECDC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/ECDC) 2 · [ETH](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/ETH) 15 · [EXTI](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/EXTI) 1 · [FLASH](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/FLASH) 2 · [FMC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/FMC) 9 · [GPHA](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/GPHA) 2 · [GPIO](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/GPIO) 1 · [HSADC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/HSADC) 1 · [I2C](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/I2C) 6 · [I2S](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/I2S) 3 · [I3C](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/I3C) 3 · [IAP](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/IAP) 1 · [IWDG](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/IWDG) 1 · [LPTIM](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/LPTIM) 2 · [LTDC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/LTDC) 1 · [OPA](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/OPA) 2 · [PIOC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/PIOC) 18 · [PWR](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/PWR) 6 · [QSPI](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/QSPI) 3 · [RCC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/RCC) 3 · [RNG](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/RNG) 1 · [RTC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/RTC) 2 · [SAI](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/SAI) 1 · [SDIO](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/SDIO) 2 · [SDMMC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/SDMMC) 4 · [SPI](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/SPI) 5 · [SWPMI](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/SWPMI) 2 · [SerDes](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/SerDes) 2 · [TIM](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/TIM) 15 · [TKey](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/TKey) 3 · [UHSIF](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/UHSIF) 1 · [USART](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/USART) 7 · [USB](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/USB) 39 · [USBPD](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/USBPD) 2 · [WWDG](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/WWDG) 1
 
 ---
 Data: [ch32-device-data](https://github.com/ch32-riscv-ug/ch32-device-data) (tables/ -- each value carries its evidence and confidence there).
