@@ -6,6 +6,8 @@
 
 ### Debug / serial defaults
 
+Where these land **without writing a remap register**. SWD is live at reset; the UART pads are not -- the pin must still be put into alternate-function mode. See `route` in tables/README.ja.md.
+
 | Series | SWDIO | SWCLK | UART TX | UART RX |
 |---|---|---|---|---|
 | CH32H415 | PB9 | PB8 | none by default[^af] | none by default[^af] |
@@ -119,6 +121,7 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 | PB7 | I/O | 58 |  |
 | PB8 | I/O/A | 59 | SWCLK |
 | PB9 | I/O/A | 60 | SWDIO |
+| PB10 | I/O | 29 |  |
 | PB11 | I/O | 30 |  |
 | PB12 | I/O | 32 |  |
 | PB13 | I/O | 33 |  |
@@ -184,6 +187,7 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 | PB7 | - | - | TIM10_CH2 | - | USART8_CK | - | - | DVP_VSYNC | - | - | TIM4_CH2 | CAN1_TX | I2C1_SDA | - | I2C4_SDA | USART1_RX | - | - |
 | PB8 | SWCLK, USBHS_DP | SWCLK, USBHS_DP | - | TIM10_CH3 | SDIO_D4 | - | - | DVP_D6 | LTDC_B6 | - | TIM4_CH3 | - | I2C1_SCL | PIOC_IO0 | I2C4_SCL | - | USART6_RX | CAN1_RX |
 | PB9 | SWDIO, SWIO, USBHS_DM | SWDIO, SWIO, USBHS_DM | - | TIM10_CH4 | SDIO_D5 | I2C4_SMBA | - | DVP_D7 | LTDC_B7 | - | TIM4_CH4 | - | I2C1_SDA | I2S2_WS, SPI2_NSS | I2C4_SDA | PIOC_IO1 | USART6_TX | CAN1_TX |
+| PB10 | - | - | - | TIM2_CH3 | - | QSPI2_SCSXN | - | - | LTDC_G4 | - | TIM9_CH2 | LPTIM2_CH1 | I2C2_SCL | I2S2_CK, SPI2_SCK | - | USART3_TX | SDIO_CMD | USART6_CK |
 | PB11 | - | - | - | TIM2_CH4 | - | QSPI2_SIOX0 | - | - | LTDC_G5 | - | - | LPTIM2_ETR | I2C2_SDA | - | - | USART3_RX | SDIO_CK | TIM9_CH4 |
 | PB12 | - | - | - | TIM1_BKIN | LTDC_VSYNC | QSPI2_SIOX1 | - | CMP_OUT | USART7_RX | DVP_PCLK | TIM8_BKIN | - | I2C2_SMBA | I2S2_WS, SPI2_NSS | DFSDM_DATIN1 | USART3_CK | TIM9_CH3 | CAN2_RX |
 | PB13 | - | - | - | TIM1_CH1N | - | QSPI2_SIOX0 | - | DVP_D2 | USART7_TX | - | TIM8_BKIN2 | LPTIM2_OC | TIM9_ETR | I2S2_CK, SPI2_SCK | DFSDM_CKIN1 | USART3_CTS | DVP_HSYNC | CAN2_TX |
@@ -272,6 +276,10 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 | PF10 | I/O/A | 7 |  |
 | PF12 | I/O/A | 28 |  |
 | PF13 | I/O | 29 |  |
+| SSRXA | USB3.0 | 60 |  |
+| SSRXB | USB3.0 | 59 |  |
+| SSTXA | USB3.0 | 57 |  |
+| SSTXB | USB3.0 | 56 |  |
 | VDD12A | P | 58 |  |
 | VDD33 | P | 2/32 |  |
 | VDD33A | P | 15 |  |
@@ -442,6 +450,10 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 | PC13-RTC | I/O | - | 8 | - |  |
 | PC14-OSC32_IN | I/O/A | - | 9 | - |  |
 | PC15-OSC32_OUT | I/O/A | - | 10 | - |  |
+| SSRXA | USB3.0 | 88 | 127 | 5 |  |
+| SSRXB | USB3.0 | 87 | 126 | 4 |  |
+| SSTXA | USB3.0 | 85 | 124 | 2 |  |
+| SSTXB | USB3.0 | 84 | 123 | 1 |  |
 | VBAT | P | - | 7 | - |  |
 | VDD12A | P | 86 | 125 | 3 |  |
 | VDD33 | P | 1/11/59 | 16/93/128 | 6/12 |  |
@@ -561,10 +573,10 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 
 | Series | Field | Register | Bits | Values | Reset |
 |---|---|---|---|---|---|
-| CH32H416 | SDMMC_REMAP | PCFR1 | PCFR1:10;PCFR1:11 | 0;1;2;3 |  |
-| CH32H417 | SDMMC_REMAP | PCFR1 | PCFR1:10;PCFR1:11 | 0;1;2;3 |  |
-| CH32H417 | UHSIF_CLK_REMAP | PCFR1 | PCFR1:6;PCFR1:7 | 0;1;2;3 |  |
-| CH32H417 | UHSIF_PORT_REMAP | PCFR1 | PCFR1:8;PCFR1:9 | 0;1;2;3 |  |
+| CH32H416 | SDMMC_REMAP | PCFR1 | PCFR1:10;PCFR1:11 | 0;1;2;3 | 0 |
+| CH32H417 | SDMMC_REMAP | PCFR1 | PCFR1:10;PCFR1:11 | 0;1;2;3 | 0 |
+| CH32H417 | UHSIF_CLK_REMAP | PCFR1 | PCFR1:6;PCFR1:7 | 0;1;2;3 | 0 |
+| CH32H417 | UHSIF_PORT_REMAP | PCFR1 | PCFR1:8;PCFR1:9 | 0;1;2;3 | 0 |
 
 </details>
 
@@ -614,8 +626,10 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 |---|---|---|
 | HBPERIPH | `0x40000000` | bus |
 | PERIPH | `0x40000000` | bus |
-| FLASH | `0x00000000` | link-origin |
-| RAM | `0x20120000` | link-origin |
+| FLASH (V3F) | `0x00000000` | link-origin |
+| FLASH (V5F) | `0x00010000` | link-origin |
+| RAM (V5F) | `0x200c0300` | link-origin |
+| RAM (V3F) | `0x20110100` | link-origin |
 | FLASH | `0x08000000` | memory |
 | OB | `0x1ffff800` | memory |
 | SRAM | `0x20100000` | memory |
