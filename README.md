@@ -4,6 +4,8 @@
 
 *Generated from the mirror at commit [`19a42a0`](https://github.com/ch32-riscv-ug/CH32H417/tree/19a42a002fae18d59fff0ee5fe8b5c7f90bf7be1) (2026-08-24). Newer PDFs may exist upstream; see Documents below.*
 
+[Choose a part](#product-comparison) &middot; [Pin viewer](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H415) &middot; [Pin maps](#pin-maps--alternate-functions) &middot; [Errata](#errata) &middot; [Examples](#evt-examples) &middot; [Documents](#documents) &middot; [Address map](#address-map)
+
 ## Quick start
 
 ### Debug / serial defaults
@@ -20,17 +22,41 @@ Where these land **without writing a remap register**. SWD is live at reset; the
 
 ## Series
 
-| Series | Core | ISA | Flash | SRAM | Clock | VDD | Packages | Products | Official |
+| Series | Core | ISA | Flash | SRAM | Main clock | VDD | Packages | Products | Official |
 |---|---|---|---|---|---|---|---|---|---|
-| **CH32H415** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 960K | 896K | 160/200 MHz | - | QFN60X6 | 1 | [en](https://www.wch-ic.com/products/CH32H415.html) / [zh](https://www.wch.cn/products/CH32H415.html) |
-| **CH32H416** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 480K | 896K | 160/200 MHz | - | QFN60X6 | 1 | [en](https://www.wch-ic.com/products/CH32H416.html) / [zh](https://www.wch.cn/products/CH32H416.html) |
-| **CH32H417** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 960K | 896K | 160/200 MHz | - | QFN128,QFN68,QFN88 | 3 | [en](https://www.wch-ic.com/products/CH32H417.html) / [zh](https://www.wch.cn/products/CH32H417.html) |
+| **CH32H415** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 960K | 896K | 160/200 MHz\* | - | QFN60X6 | 1 | [en](https://www.wch-ic.com/products/CH32H415.html) / [zh](https://www.wch.cn/products/CH32H415.html) |
+| **CH32H416** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 480K | 896K | 160/200 MHz\* | - | QFN60X6 | 1 | [en](https://www.wch-ic.com/products/CH32H416.html) / [zh](https://www.wch.cn/products/CH32H416.html) |
+| **CH32H417** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 960K | 896K | 160/200 MHz\* | - | QFN128,QFN68,QFN88 | 3 | [en](https://www.wch-ic.com/products/CH32H417.html) / [zh](https://www.wch.cn/products/CH32H417.html) |
+
+\* the datasheet states no nominal system main frequency for this series, so the figure is the electrical maximum (HCLK) from the characteristics table -- a limit, not a rating.
 
 ## Product comparison
 
 ### CH32H417 product comparison
 
-| | CH32H417&#8203;MEU6&#8203;(QFN88) | CH32H417&#8203;QEU6&#8203;(QFN128) | CH32H417&#8203;WEU6&#8203;(QFN68) |
+Only the 15 rows that differ between these 3 products; the other 32 are the same for all of them.
+
+| | [CH32H417&#8203;MEU6](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H417MEU6)&#8203;(QFN88) | [CH32H417&#8203;QEU6](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H417QEU6)&#8203;(QFN128) | [CH32H417&#8203;WEU6](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H417WEU6)&#8203;(QFN68) |
+|---|---|---|---|
+| **GPIO** | 65 | 95 | 50 |
+| ADC/TKey Channels | 9+2 | 16+2 | 7+2 |
+| HSADC Channels | 4 | 7 | 4 |
+| DAC (Unit) | 2 | 2 | 1 (DAC2) |
+| OPA | 2 (OPA1/3) | 3 | 2 (OPA1/3) |
+| USART | 8 | 8 | 7 |
+| SPI/I2S | 4/2 | 4/2 | 3/2 |
+| QSPI | 1 (QSPI2) | 2 | 1 (QSPI2) |
+| UHSIF | 1 | 1 | 1(1) |
+| SDIO | - | 1 | - |
+| USBFS/OTG_FS | 1 | 1 | - |
+| USBPD Type-C | 1 | 1 | - |
+| FSMC | 1(2) | 1 | 1(2) |
+| SerDes(4) | 1 | 1 | - |
+| SDRAM | 1 | 1 | 1(3) |
+
+<details><summary>All 47 rows</summary>
+
+| | [CH32H417&#8203;MEU6](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H417MEU6)&#8203;(QFN88) | [CH32H417&#8203;QEU6](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H417QEU6)&#8203;(QFN128) | [CH32H417&#8203;WEU6](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H417WEU6)&#8203;(QFN68) |
 |---|---|---|---|
 | **Flash** | 960K | 960K | 960K |
 | **SRAM** | 896K | 896K | 896K |
@@ -80,7 +106,9 @@ Where these land **without writing a remap register**. SWD is live at reset; the
 | SDRAM | 1 | 1 | 1(3) |
 | PIOC | 1 | 1 | 1 |
 
-## Pinouts
+</details>
+
+## Packages & pinout drawings
 
 Pinout drawings are in the datasheet (chapter *Pinouts*):
 
@@ -92,11 +120,16 @@ Pinout drawings are in the datasheet (chapter *Pinouts*):
 | QFN128 | CH32H417QEU6 | [en](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF) / [zh](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF) | [drawing](https://raw.githubusercontent.com/ch32-riscv-ug/WCH-common/main/image/package_QFN128.png) |
 | QFN68 | CH32H417WEU6 | [en](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF) / [zh](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF) | [drawing](https://raw.githubusercontent.com/ch32-riscv-ug/WCH-common/main/image/package_QFN68.png) |
 
-## Pin definitions
+## Pin maps & alternate functions
+
+> [!NOTE]
+> These are the **pin-table superset**: the datasheet prints one pad table for every product that shares a pinout, so a pad row does not mean this part has the peripheral. Use the product comparison table above for what a given part number contains.
 
 ### CH32H415 pin map
 
 Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H415) [ADC](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H415&features=ADC) [I2C](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H415&features=I2C) [SPI](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H415&features=SPI) [SYS](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H415&features=SYS) [TIM](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H415&features=TIM) [UART](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H415&features=UART) [USB](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H415&features=USB)
+
+<details><summary><b>CH32H415 pin map</b> (61 pads x 1 products)</summary>
 
 | Pin name | Type | [CH32H415&#8203;REU6](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H415REU6)&#8203;(QFN60X6) | Notes |
 |---|---|---|---|
@@ -161,6 +194,8 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 | VSS | P | EP |  |
 | XI | I/A | 7 |  |
 | XO | O/A | 8 |  |
+
+</details>
 
 <details><summary><b>CH32H415 alternate functions</b></summary>
 
@@ -228,6 +263,8 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 
 Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H416) [ADC](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H416&features=ADC) [I2C](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H416&features=I2C) [SPI](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H416&features=SPI) [SYS](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H416&features=SYS) [TIM](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H416&features=TIM) [UART](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H416&features=UART) [USB](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H416&features=USB)
 
+<details><summary><b>CH32H416 pin map</b> (60 pads x 1 products)</summary>
+
 | Pin name | Type | [CH32H416&#8203;RDU6](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H416RDU6)&#8203;(QFN60X6) | Notes |
 |---|---|---|---|
 | PA0 | I/O/A | 16 |  |
@@ -291,6 +328,8 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 | XI | I/A | 8 |  |
 | XO | O/A | 9 |  |
 
+</details>
+
 <details><summary><b>CH32H416 alternate functions</b></summary>
 
 | Pad | default | af-0 | af-1 | af-10 | af-11 | af-12 | af-13 | af-14 | af-15 | af-2 | af-3 | af-4 | af-5 | af-6 | af-7 | af-8 | af-9 | remap-1 | remap-2 | remap-3 |
@@ -349,6 +388,8 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 ### CH32H417 pin map
 
 Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H417) [ADC](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H417&features=ADC) [I2C](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H417&features=I2C) [SPI](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H417&features=SPI) [SYS](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H417&features=SYS) [TIM](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H417&features=TIM) [UART](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H417&features=UART) [USB](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H417&features=USB)
+
+<details><summary><b>CH32H417 pin map</b> (116 pads x 3 products)</summary>
 
 | Pin name | Type | [CH32H417&#8203;MEU6](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H417MEU6)&#8203;(QFN88) | [CH32H417&#8203;QEU6](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H417QEU6)&#8203;(QFN128) | [CH32H417&#8203;WEU6](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H417WEU6)&#8203;(QFN68) | Notes |
 |---|---|---|---|---|---|
@@ -468,6 +509,8 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 | VSSA | P | - | 31 | - |  |
 | XI | I/A | 12 | 23 | 13 |  |
 | XO | O/A | 13 | 24 | 14 |  |
+
+</details>
 
 <details><summary><b>CH32H417 alternate functions</b></summary>
 
