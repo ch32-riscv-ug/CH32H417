@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT  *******************************
 * File Name          : hardware.c
 * Author             : WCH
-* Version            : V1.0.2
-* Date               : 2026/04/08
+* Version            : V1.0.3
+* Date               : 2026/06/01
 * Description        : This file provides all the hardware firmware functions.
 *********************************************************************************
 * Copyright (c) 2025 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -154,7 +154,7 @@ void SDRAM_Send_Cmd(u8 bankx,u8 cmd,u8 refresh,u16 regval)
  */
 void SDRAM_Initialization_Sequence()
 {
-	u32 temp=0;
+	u32 temp=0,bank1=0;
     SDRAM_Send_Cmd(bank1,FMC_SDRAM_CMD_CLK_ENABLE,1,0);      
 	SDRAM_Send_Cmd(bank1,FMC_SDRAM_CMD_PALL,1,0);       
     SDRAM_Send_Cmd(bank1,FMC_SDRAM_CMD_AUTOREFRESH_MODE,8,0);

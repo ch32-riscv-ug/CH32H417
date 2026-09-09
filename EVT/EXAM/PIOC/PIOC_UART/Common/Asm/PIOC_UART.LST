@@ -1,6 +1,6 @@
 MCU CH53X ASSEMBLER:  WASM53B Ver 3.1
 Copyright (C) wch.cn 1998-2021, B211121
-Website:   http://wch.cn
+Website:   https://wch.cn
 
 List file: PIOC_UART.LST
 Date: 2025.08.11  Time: 15:55:06
@@ -16,7 +16,7 @@ L=0001, ......, D=0000 : ;
 L=0002, NEST_INCLUDE=1 : INCLUDE				PIOC_INC.ASM
 L=0001, ......, D=0000 : ; include file for PIOC/eMCU, V1.0
 L=0002, ......, D=0000 : ; by W.ch @2022.08
-L=0003, ......, D=0000 : ; http://wch.cn  http://winchiphead.com
+L=0003, ......, D=0000 : ; https://wch.cn  https://winchiphead.com
 L=0004, ......, D=0000 : ;
 L=0005, ......, D=0000 : 
 L=0006, ......, D=0000 : ; define SFR register

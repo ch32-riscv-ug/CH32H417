@@ -1,5 +1,5 @@
 
-Nanjing Qinheng Microelectronics Co., Ltd. 2026.04
+Nanjing Qinheng Microelectronics Co., Ltd. 2026.09
 
 https://wch-ic.com
 
@@ -39,6 +39,7 @@ Directory
   |      |      |      |      |-- SoftUART: I/O port simulation serial port routine 
   |      |      |      |      |-- LTDC_LVGL: use LTDC driver to display some animations on the LCD
   |      |      |      |      |-- FATFS_eMMC：Eight-line operation EMMC card porting file read-write system FATFS
+  |      |      |      |      |-- Betaflight：H41x Betaflight Library
   |      |      |      |-- CAN
   |      |      |      |      |-- Networking: CAN routine: normal mode, standard frame and expanded frame data transceiver
   |      |      |      |      |-- TestMode: test mode, including silent mode, loopback mode and loopback silent mode
@@ -63,6 +64,7 @@ Directory
   |      |      |      |      |      |-- Interrupt_VTF：VTF interrupt routine  
   |      |      |      |      |-- OS： 
   |      |      |      |      |      |-- FreeRTOS：FreeRTOS routine 
+  |      |      |      |      |      |-- RT_Thread：RT_Thread routine 
   |      |      |      |-- CRC
   |      |      |      |      |-- CRC_Calculation：CRC routine
   |      |      |      |-- DAC 
@@ -331,6 +333,8 @@ Directory
   |	     |      |      |      |      |      |      |-- UVC-DVP: Retrieve data from DVP and upload it via USB, supporting MJPEG format.
   |      |      |      |      |      |-- HOST
   |      |      |      |      |      |      |-- HOST_SS_ACCESS_SECTOR: USBSS scanning routine
+  |      |      |      |      |      |      |-- Host_SS_Hub_Access_Sector: This routine demonstrates CH32H417 acting as a USB host, accessing and reading/writing U-disk sectors via an external USB HUB.
+  |      |      |      |      |      |      |-- Host_SS_Hub_Udisk_Exams: This routine demonstrates how the CH32H417 can act as a USB host to control the udisk under the HUB（Support for file system）.
   |      |      |      |-- USBPD
   |      |      |      |      |-- USBPD_SNK：PD SNK routine
   |      |      |      |      |-- USBPD_SRC：PD SRC routine   

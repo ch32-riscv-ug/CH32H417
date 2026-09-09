@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT *******************************
  * File Name          : wchnet.h
  * Author             : WCH
- * Version            : V1.90
- * Date               : 2023/05/12
+ * Version            : V1.9.1
+ * Date               : 2026/09/07
  * Description        : This file contains the headers of 
 *                    the Ethernet protocol stack library.
 *********************************************************************************
@@ -180,7 +180,7 @@ typedef struct _SOCK_INF
     uint32_t RecvReadPoint;                   //The read pointer of the receive buffer
     uint32_t RecvRemLen;                      //The length of the remaining data in the receive buffer
     uint32_t ProtoType;                       //protocol type
-    uint32_t SockStatus;                      //Low byte Socket state, the next low byte is TCP state, only meaningful in TCP mode
+    uint32_t SockStatus;                      //Socket state
     uint32_t DesPort;                         //destination port
     uint32_t SourPort;                        //Source port, protocol type in IPRAW mode
     uint8_t  IPAddr[4];                       //Socket destination IP address

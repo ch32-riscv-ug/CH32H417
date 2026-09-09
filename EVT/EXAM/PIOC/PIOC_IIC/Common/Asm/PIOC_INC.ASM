@@ -1,6 +1,6 @@
 ; include file for PIOC/eMCU, V1.0
 ; by W.ch @2022.08
-; http://wch.cn  http://winchiphead.com
+; https://wch.cn  https://winchiphead.com
 ;
 
 ; define SFR register

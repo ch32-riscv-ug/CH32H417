@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT *******************************
  * File Name          : usb_desc.c
  * Author             : WCH
- * Version            : V1.0.1
- * Date               : 2025/10/24
+ * Version            : V1.0.2
+ * Date               : 2026/09/09
  * Description        : usb device descriptor,configuration descriptor,
  *                      string descriptors and other descriptors.
 *********************************************************************************
@@ -38,7 +38,7 @@ const uint8_t  MyCfgDescr_HS[ ] =
 {
     0x09,                                                   // bLength
     0x02,                                                   // bDescriptorType (Configuration)
-    0x3C, 0x00,                                             // wTotalLength 60
+    0x20, 0x00,                                             // wTotalLength 60
     0x01,                                                   // bNumInterfaces 1
     0x01,                                                   // bConfigurationValue
     0x00,                                                   // iConfiguration (String Index)
@@ -49,7 +49,7 @@ const uint8_t  MyCfgDescr_HS[ ] =
     0x04,                                                   // bDescriptorType (Interface)
     0x00,                                                   // bInterfaceNumber 0
     0x00,                                                   // bAlternateSetting
-    0x06,                                                   // bNumEndpoints 6
+    0x02,                                                   // bNumEndpoints 2
     0xFF,                                                   // bInterfaceClass
     0xFF,                                                   // bInterfaceSubClass
     0xFF,                                                   // bInterfaceProtocol
@@ -69,33 +69,6 @@ const uint8_t  MyCfgDescr_HS[ ] =
     (uint8_t)DEF_USB_EP2_HS_SIZE, (uint8_t)( DEF_USB_EP2_HS_SIZE >> 8 ),  // wMaxPacketSize 512
     0x00,                                                   // bInterval 0 (unit depends on device speed)
 
-    0x07,                                                   // bLength
-    0x05,                                                   // bDescriptorType (Endpoint)
-    0x03,                                                   // bEndpointAddress (OUT/H2D)
-    0x02,                                                   // bmAttributes (Bulk)
-    (uint8_t)DEF_USB_EP3_HS_SIZE, (uint8_t)( DEF_USB_EP3_HS_SIZE >> 8 ),  // wMaxPacketSize 512
-    0x00,                                                   // bInterval 0 (unit depends on device speed)
-
-    0x07,                                                   // bLength
-    0x05,                                                   // bDescriptorType (Endpoint)
-    0x84,                                                   // bEndpointAddress (IN/D2H)
-    0x02,                                                   // bmAttributes (Bulk)
-    (uint8_t)DEF_USB_EP4_HS_SIZE, (uint8_t)( DEF_USB_EP4_HS_SIZE >> 8 ),  // wMaxPacketSize 512
-    0x00,                                                   // bInterval 0 (unit depends on device speed)
-
-    0x07,                                                   // bLength
-    0x05,                                                   // bDescriptorType (Endpoint)
-    0x05,                                                   // bEndpointAddress (OUT/H2D)
-    0x02,                                                   // bmAttributes (Bulk)
-    (uint8_t)DEF_USB_EP5_HS_SIZE, (uint8_t)( DEF_USB_EP5_HS_SIZE >> 8 ),  // wMaxPacketSize 512
-    0x00,                                                   // bInterval 0 (unit depends on device speed)
-
-    0x07,                                                   // bLength
-    0x05,                                                   // bDescriptorType (Endpoint)
-    0x86,                                                   // bEndpointAddress (IN/D2H)
-    0x02,                                                   // bmAttributes (Bulk)
-    (uint8_t)DEF_USB_EP6_HS_SIZE, (uint8_t)( DEF_USB_EP6_HS_SIZE >> 8 ), // wMaxPacketSize 512
-    0x00,                                                   // bInterval 0 (unit depends on device speed)
 };
 
 /* Configuration Descriptor(full speed) */

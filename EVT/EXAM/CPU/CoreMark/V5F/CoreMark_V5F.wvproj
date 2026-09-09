@@ -1,5 +1,6 @@
 {
 	"version": "1.0",
+	"hasAllParsed": true,
 	"isNormalMRSProject": true,
 	"basic": {
 		"chipInfo": {
@@ -8,11 +9,16 @@
 			"series": "CH32H417",
 			"rtos": "NoneOS",
 			"mcu": "CH32H417QEU",
-			"description": "CH32H417 is an interconnected general-purpose microcontroller based on the dual core design of Qingke RISC-V5F and RISC-V3F. CH32H417 integrates USB 3.2 Gen1 controller and transceiver, 100Mbps Ethernet MAC and PHY, SerDes high-speed isolation transceiver, Type-C/PD controller and PHY, providing SD/EMMC controller, universal high-speed interface UHSIF, DVP digital image interface, single wire protocol main interface SWPMI, programmable protocol I/O controller PIOC, flexible storage controller FMC, DFSDM, LTDC, GPHA, DMA controller, multiple timers, 8 serial ports I3C, 4 sets of I2C, 2 sets of QSPI, 4 sets of SPI, 2 sets of I2S, 3 sets of CAN and other peripheral resources, built-in 5M sampling rate dual 12 bit ADC unit, 20M sampling rate 10 bit high-speed HSADC unit, 16 Touchkey, dual DAC unit, 3 sets of operational amplifiers OPA, voltage comparator CMP and other analog resources, supporting 10M/100M Ethernet communication, supporting USB 2.0 and USB 3.0, supporting USB Host host and USB Device device functions, Type-C and PDUSB fast charging functions, supporting SerDes high-speed isolation and long-distance transmission, supporting dual core division of labor to improve network protocol processing efficiency and communication response speed. ",
+			"description": "CH32H417 is an interconnected general-purpose microcontroller based on the dual core design of Qingke RISC-V5F and RISC-V3F. CH32H417 integrates USB 3.2 Gen1 controller and transceiver, 100Mbps Ethernet MAC and PHY, SerDes high-speed isolation transceiver, Type-C/PD controller and PHY, providing SD/EMMC controller, universal high-speed interface UHSIF, DVP digital image interface, single wire protocol main interface SWPMI, programmable protocol I/O controller PIOC, flexible storage controller FMC, DFSDM, LTDC, GPHA, DMA controller, multiple timers, 8 serial ports I3C, 4 sets of I2C, 2 sets of QSPI, 4 sets of SPI, 2 sets of I2S, 3 sets of CAN and other peripheral resources, built-in 5M sampling rate dual 12 bit ADC unit, 20M sampling rate 10 bit high-speed HSADC unit, 16 Touchkey, dual DAC unit, 3 sets of operational amplifiers OPA, voltage comparator CMP and other analog resources, supporting 10M/100M Ethernet communication, supporting USB 2.0 and USB 3.0, supporting USB Host host and USB Device device functions, Type-C and PDUSB fast charging functions, supporting SerDes high-speed isolation and long-distance transmission, supporting dual core division of labor to improve network protocol processing efficiency and communication response speed.",
+			"tempratureScope": "",
+			"artifactType": "executable",
 			"link": "WCH-Link",
 			"peripheral_version": "1.4",
 			"calibrateSupport": false,
-			"calibrateCommand": ""
+			"calibrateCommand": "",
+			"UIConfigSupport": false,
+			"UIConfigCommand": "",
+			"externalFlashSupport": false
 		},
 		"linkedFolders": [
 			{
@@ -69,7 +75,8 @@
 					]
 				},
 				"downloadMerged": true,
-				"loadMergedBeforeDebug": true
+				"loadMergedBeforeDebug": true,
+				"retainOffsetData": true
 			}
 		}
 	},
@@ -91,8 +98,8 @@
 				"excludeResources": [
 					"${project}/Ld/V3F",
 					"${project}/Startup/startup_ch32h417_v3f.S",
-					"${project}/User/main.c",
-					"${project}/Common/Startup/startup_ch32h417_v3f.S"
+					"${project}/Common/Startup/startup_ch32h417_v3f.S",
+					"${project}/User/coremark/core_main.c"
 				],
 				"optimization": {
 					"level": "fast",
@@ -112,6 +119,7 @@
 					"code_generation_without_hardware_floating": false,
 					"use_pipelines": false,
 					"show_caret_indicating_the_column": false,
+					"calling_convention_variant": false,
 					"other_optimization_flags": "-funroll-all-loops -finline-limit=600 -ftree-dominator-opts -fno-if-conversion2 -fselective-scheduling -fno-code-hoisting"
 				},
 				"warnings": {
@@ -136,7 +144,7 @@
 				},
 				"debugging": {
 					"debug_level": "default",
-					"debug_format": "default",
+					"debug_format": "dwarf4",
 					"generate_prof_information": false,
 					"generate_gprof_information": false,
 					"other_debugging_flags": ""
@@ -180,7 +188,8 @@
 							"${project}/Core",
 							"${project}/User",
 							"${project}/Peripheral/inc",
-							"${project}/Common"
+							"${project}/Common",
+							"${project}/User/coremark"
 						],
 						"include_system_paths": [],
 						"include_files": []
@@ -314,7 +323,8 @@
 					}
 				},
 				"archiver": {
-					"archiver_flags": "-r"
+					"archiver_flags": "-r",
+					"libOutputPrefix": "lib"
 				},
 				"createFlash": {
 					"enabled": true,
@@ -322,6 +332,7 @@
 					"copy_only_section_text": false,
 					"copy_only_section_data": false,
 					"copy_only_sections": [],
+					"create_algorithm_file": false,
 					"other_flags": ""
 				},
 				"createList": {
@@ -345,6 +356,7 @@
 					"show_totals": false,
 					"other_flags": ""
 				},
+				"configVariables": [],
 				"riscvTargetProcessor": {
 					"architecture": "rv32i",
 					"multiply_extension": true,
@@ -354,6 +366,7 @@
 					"extra_compressed_extension": true,
 					"bit_extension": true,
 					"multiplication_subset_of_the_M_extension": false,
+					"vector_cryptography_extensions": "",
 					"integer_ABI": "ilp32",
 					"floating_point_ABI": "none",
 					"tuning": "default",
@@ -363,9 +376,8 @@
 					"save_restore": true,
 					"other_target_flags": ""
 				},
-				"component_toolchain": "${WCH:Toolchain:GCC12}",
-				"name": "obj",
-				"configVariables": []
+				"component_toolchain": "${WCH:Toolchain:GCC15}",
+				"name": "obj"
 			}
 		]
 	},
@@ -383,6 +395,8 @@
 		"disablepowerout": false,
 		"clearcodeflash": false,
 		"disablecodeprotect": false,
+		"flashType": "",
+		"asmFile_path": "",
 		"exepath": "",
 		"exearguments": ""
 	},
@@ -396,14 +410,14 @@
 			"configOptions": [
 				"-f \"${WCH:OpenOCD:default}/bin/wch-dual-core.cfg\" -c page_erase"
 			],
-			"host": "localhost",
+			"host": "127.0.0.1",
 			"port": 3333,
 			"skipDownloadBeforeDebug": false,
 			"enablePageEraser": true,
 			"enableNoZeroWaitingAreaFlash": false
 		},
 		"gdbCfg": {
-			"executable": "${WCH:Toolchain:GCC12}",
+			"executable": "${WCH:Toolchain:GCC15}",
 			"options": [],
 			"commands": [
 				"set mem inaccessible-by-default off",
@@ -459,10 +473,8 @@
 			"ATTR_BUILD_BEFORE_LAUNCH_ATTR": 2,
 			"GdbServerAllocateConsole": true,
 			"GdbServerAllocateTelnetConsole": false,
-			"SkipDownloadBeforeDebug": false,
 			"StartGdbCLient": true,
-			"UPDATE_THREADLIST_ON_SUSPEND": false,
-			"DebugInRam": false
+			"UPDATE_THREADLIST_ON_SUSPEND": false
 		}
 	}
 }

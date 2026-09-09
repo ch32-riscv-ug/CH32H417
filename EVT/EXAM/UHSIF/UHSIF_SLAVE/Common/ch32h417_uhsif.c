@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT *******************************
  * File Name          : ch32h417_uhsif.c
  * Author             : WCH
- * Version            : V1.0.1
- * Date               : 2025/04/10
+ * Version            : V1.0.2
+ * Date               : 2026/09/09
  * Description        : This file provides all the UHSIF firmware functions.
  *********************************************************************************
  * Copyright (c) 2025 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -11,6 +11,7 @@
  *******************************************************************************/
 #include "ch32H417_uhsif.h"
 #include "ch32h417_usbss_device.h"
+#include "ch32h417_usbhs_device.h"
 
 pack_t UHSIF_WR_Pack[ DEF_UHSIF_TXBUF_CNT ];
 comm_t UHSIF_WR_COMM;
@@ -103,29 +104,39 @@ void UHSIF_Line0_IN_Callback( uint32_t rcv_count )
         UHSIF_RD_Pack[ UHSIF_RD_COMM.load ].len = rcv_count;
 
         NVIC_DisableIRQ(USBSS_IRQn);
+        NVIC_DisableIRQ(USBHS_IRQn);
         UHSIF_RD_COMM.total++;  
         NVIC_EnableIRQ(USBSS_IRQn);
+        NVIC_EnableIRQ(USBHS_IRQn);
     
         if( UHSIF_RD_COMM.total == 1 ) 
         {
-            while( cnt-- )
+            if( USBSS_DevEnumStatus )
             {
-                if(( USBSSD->EP1_TX.UEP_TX_ST & USBSS_EP_TX_CHAIN_EN_MASK ) != USBSS_EP_TX_CHAIN_EN_MASK )
+                while( cnt-- )
                 {
-                    if( UHSIF_RD_Pack[ UHSIF_RD_COMM.load ].len % 1024 )
+                    if(( USBSSD->EP1_TX.UEP_TX_ST & USBSS_EP_TX_CHAIN_EN_MASK ) != USBSS_EP_TX_CHAIN_EN_MASK )
                     {
-                        USBSSD->EP1_TX.UEP_TX_CHAIN_LEN = UHSIF_RD_Pack[ UHSIF_RD_COMM.load ].len % 1024;
-                        USBSSD->EP1_TX.UEP_TX_CHAIN_EXP_NUMP = UHSIF_RD_Pack[ UHSIF_RD_COMM.load ].len / 1024 + 1;
-                    }
-                    else 
-                    {
-                        USBSSD->EP1_TX.UEP_TX_CHAIN_LEN = 1024;
-                        USBSSD->EP1_TX.UEP_TX_CHAIN_EXP_NUMP = UHSIF_RD_Pack[ UHSIF_RD_COMM.load ].len / 1024;
-                    }
+                        if( UHSIF_RD_Pack[ UHSIF_RD_COMM.load ].len % 1024 )
+                        {
+                            USBSSD->EP1_TX.UEP_TX_CHAIN_LEN = UHSIF_RD_Pack[ UHSIF_RD_COMM.load ].len % 1024;
+                            USBSSD->EP1_TX.UEP_TX_CHAIN_EXP_NUMP = UHSIF_RD_Pack[ UHSIF_RD_COMM.load ].len / 1024 + 1;
+                        }
+                        else 
+                        {
+                            USBSSD->EP1_TX.UEP_TX_CHAIN_LEN = 1024;
+                            USBSSD->EP1_TX.UEP_TX_CHAIN_EXP_NUMP = UHSIF_RD_Pack[ UHSIF_RD_COMM.load ].len / 1024;
+                        }
 
-                    break;
-                }
-            }          
+                        break;
+                    }
+                }  
+            }
+            else if( USBHS_DevEnumStatus )
+            {
+                USBHSD->UEP1_TX_LEN = UHSIF_RD_Pack[ UHSIF_RD_COMM.load ].len;
+                USBHSD->UEP1_TX_CTRL = (USBHSD->UEP1_TX_CTRL & ~USBHS_UEP_T_RES_MASK) | USBHS_UEP_T_RES_ACK;
+            }
         }
         UHSIF_RD_COMM.load++;                                         
         if( UHSIF_RD_COMM.load >= DEF_UHSIF_RXBUF_CNT )                
@@ -213,8 +224,10 @@ void UHSIF_Line1_OUT_Callback( void )
     if( UHSIF_WR_COMM.total )
     {
         NVIC_DisableIRQ(USBSS_IRQn);
+        NVIC_DisableIRQ(USBHS_IRQn);
         UHSIF_WR_COMM.total--;
         NVIC_EnableIRQ(USBSS_IRQn);
+        NVIC_EnableIRQ(USBHS_IRQn);
     }
 
     /* Monitor whether the remaining space is available for further downloads */
@@ -223,7 +236,14 @@ void UHSIF_Line1_OUT_Callback( void )
         if( UHSIF_WR_COMM.stop )
         {
             UHSIF_WR_COMM.stop = 0;
-            USBSSD->EP1_RX.UEP_RX_CHAIN_MAX_NUMP = DEF_ENDP1_OUT_BURST_LEVEL;
+            if( USBSS_DevEnumStatus ) 
+            {
+                USBSSD->EP1_RX.UEP_RX_CHAIN_MAX_NUMP = DEF_ENDP1_OUT_BURST_LEVEL;
+            }
+            else if( USBHS_DevEnumStatus )
+            {
+                USBHSD->UEP1_RX_CTRL = (USBHSD->UEP1_RX_CTRL & ~USBHS_UEP_R_RES_MASK) | USBHS_UEP_R_RES_ACK;
+            }           
         }
     }
 }

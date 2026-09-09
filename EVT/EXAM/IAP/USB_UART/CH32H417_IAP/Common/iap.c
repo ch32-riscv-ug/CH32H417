@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT  *******************************
  * File Name          : iap.c
  * Author             : WCH
- * Version            : V1.0.1
- * Date               : 2025/01/09
+ * Version            : V1.0.2
+ * Date               : 2026/09/07
  * Description        : IAP
 *********************************************************************************
 * Copyright (c) 2021 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -48,7 +48,7 @@ u8 RecData_Deal(void)
 
     switch ( isp_cmd_t->other.buf[0]) {
     case CMD_IAP_ERASE:
-        FLASH_Unlock_Fast();
+
         if(((*(vu32*)FLASH_CFGR0_BASE) & (1<<28)) != 0)
         {
             Flash_Erase_Page_Size = Size_8KB;
@@ -67,9 +67,8 @@ u8 RecData_Deal(void)
         }
         CodeLen += Lenth;
         if (CodeLen >= Flash_Erase_Page_Size) {
-            FLASH_Unlock_Fast();
 
-            FLASH_ErasePage(Program_addr);
+            FLASH_ROM_ERASE(Program_addr,Flash_Erase_Page_Size);
             PBuf = Fast_Program_Buf;
             for (uint32_t j = 0; j < (Flash_Erase_Page_Size/256);j++)
             {
@@ -101,8 +100,8 @@ u8 RecData_Deal(void)
             }
             temp = CodeLen;
             PBuf = Fast_Program_Buf;
-            FLASH_ErasePage(Program_addr& (~(Flash_Erase_Page_Size-1)));
 
+            FLASH_ROM_ERASE(Program_addr& (~(Flash_Erase_Page_Size-1)),Flash_Erase_Page_Size);
             for(i = 0;i < ((temp+Size_256B-1)/Size_256B);i++)
             {
                 CH32_IAP_Program(Program_addr, (u32*) PBuf);
@@ -131,10 +130,7 @@ u8 RecData_Deal(void)
         Verify_addr = FLASH_Base;
         s = ERR_End;
 
-        FLASH_ErasePage(CalAddr & (~(Flash_Erase_Page_Size-1)));
-        
-        FLASH->CTLR |= ((uint32_t)0x00008000);
-        FLASH->CTLR |= ((uint32_t)0x00000080);
+        FLASH_ROM_ERASE(CalAddr & (~(Flash_Erase_Page_Size-1)),Flash_Erase_Page_Size);
 
         break;
     case CMD_JUMP_IAP:
@@ -167,7 +163,6 @@ u8 UART_RecData_Deal(void)
     switch ( isp_cmd_t->UART.Cmd) {
     case CMD_IAP_ERASE:
 
-        FLASH_Unlock_Fast();
         if(((*(vu32*)FLASH_CFGR0_BASE) & (1<<28)) != 0)
         {
             Flash_Erase_Page_Size = Size_8KB;
@@ -187,8 +182,7 @@ u8 UART_RecData_Deal(void)
         CodeLen += Lenth;
         if (CodeLen >= Flash_Erase_Page_Size) 
         {
-            FLASH_Unlock_Fast();
-            FLASH_ErasePage(Program_addr);
+            FLASH_ROM_ERASE(Program_addr,Flash_Erase_Page_Size);
             PBuf = Fast_Program_Buf;
             for (uint32_t j = 0; j < (Flash_Erase_Page_Size/256);j++)
             {
@@ -221,8 +215,7 @@ u8 UART_RecData_Deal(void)
                 }
                 temp = CodeLen;
                 PBuf = Fast_Program_Buf;
-                FLASH_ErasePage(Program_addr& (~(Flash_Erase_Page_Size-1)));
-
+                FLASH_ROM_ERASE(Program_addr& (~(Flash_Erase_Page_Size-1)),Flash_Erase_Page_Size);
                 for(i = 0;i < ((temp+Size_256B-1)/Size_256B);i++)
                 {
                     CH32_IAP_Program(Program_addr, (u32*) PBuf);
@@ -252,9 +245,7 @@ u8 UART_RecData_Deal(void)
         Program_addr = FLASH_Base;
         Verify_addr = FLASH_Base;
         s = ERR_End;
-        FLASH_ErasePage(CalAddr & (~(Flash_Erase_Page_Size-1)));
-        FLASH->CTLR |= ((uint32_t)0x00008000);
-        FLASH->CTLR |= ((uint32_t)0x00000080);
+        FLASH_ROM_ERASE(CalAddr & (~(Flash_Erase_Page_Size-1)),Flash_Erase_Page_Size);
 
         break;
 

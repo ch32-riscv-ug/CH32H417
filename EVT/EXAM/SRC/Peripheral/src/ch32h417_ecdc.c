@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT  *******************************
  * File Name          : ch32h417_ecdc.c
  * Author             : WCH
- * Version            : V1.0.1
- * Date               : 2025/10/22
+ * Version            : V1.0.2
+ * Date               : 2026/09/08
  * Description        : This file provides all the ECDC firmware functions.
  *********************************************************************************
  * Copyright (c) 2025 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -54,7 +54,7 @@ void ECDC_Init(ECDC_InitTypeDef *ECDC_InitStruct)
     }
 
     ECDC_KeyExCmd(ENABLE);
-    for(int i = 0; i < (HCLKClock / SystemClock + 1) * 64 * (((ECDC->CTRL >> 4) & 0x7) == 0 ? (1) : (((ECDC->CTRL >> 4) & 0x7))); i++)
+    for(uint32_t i = 0; i < (HCLKClock / SystemClock + 1) * 64 * (((ECDC->CTRL >> 4) & 0x7) == 0 ? (1) : (((ECDC->CTRL >> 4) & 0x7))); i++)
     {
         __asm volatile ("\tnop");
     }

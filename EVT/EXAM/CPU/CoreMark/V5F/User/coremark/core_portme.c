@@ -153,7 +153,7 @@ portable_init(core_portable *p, int *argc, char *argv[])
 //    Delay_Init();
 	SystemAndCoreClockUpdate();
     USART_Printf_Init(115200);
-    ee_printf("MCU:CH417\r\n");
+    ee_printf("MCU:CH32H417\r\n");
     ee_printf("V5SystemClk:%dHz\r\n",SystemCoreClock);
 
 
@@ -179,23 +179,7 @@ portable_fini(core_portable *p)
 }
 
 
-//void systick_init(void)
-//{
-//    NVIC_EnableIRQ(SysTicK_IRQn);
-//    SysTick->SR  = 0;
-//    SysTick->CTLR= 0;
-//    SysTick->CNT = 0;
-//    SysTick->CMP = 180000-1;
-//    SysTick->CTLR= 0xF;
-//}
-//
-//
-//void SysTick_Handler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
-//void SysTick_Handler(void)
-//{
-//    SysTick->SR = 0;
-//    g_msticks++;
-//}
+
 
 
 

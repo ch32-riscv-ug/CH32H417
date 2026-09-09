@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT  *******************************
 * File Name          : ch32h417_rcc.h
 * Author             : WCH
-* Version            : V1.0.1
-* Date               : 2026/03/17
+* Version            : V1.0.2
+* Date               : 2026/05/25
 * Description        : This file provides all the RCC firmware functions.
 *********************************************************************************
 * Copyright (c) 2025 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -349,8 +349,8 @@ typedef struct
 #define RCC_ETH125MSource_SERDES_Div8    ((uint8_t)0x03)
 
 /*HSADC clock source*/
-#define RCC_HSADCSource_PLLCLK           ((uint8_t)0x00)
-#define RCC_HSADCSource_SYSCLK           ((uint8_t)0x01)
+#define RCC_HSADCSource_SYSCLK           ((uint8_t)0x00)
+#define RCC_HSADCSource_PLLCLK           ((uint8_t)0x01)
 #define RCC_HSADCSource_USBHS            ((uint8_t)0x02)
 #define RCC_HSADCSource_ETH              ((uint8_t)0x03)
 

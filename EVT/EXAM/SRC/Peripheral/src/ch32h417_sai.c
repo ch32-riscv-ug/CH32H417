@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT *******************************
 * File Name          : ch32h417_sai.c
 * Author             : WCH
-* Version            : V1.0.0
-* Date               : 2025/03/01
+* Version            : V1.0.1
+* Date               : 2026/05/22
 * Description        : This file provides all the SAI firmware functions.
 *********************************************************************************
 * Copyright (c) 2025 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -224,9 +224,9 @@ void SAI_MonoModeConfig(SAI_Block_TypeDef* SAI_Block_x, uint32_t SAI_Mono_StreoM
  */
 void SAI_TRIStateConfig(SAI_Block_TypeDef* SAI_Block_x, uint32_t SAI_TRIState)
 {
-    SAI_Block_x->CFGR1 &= ~(SAI_CFGR2_TRIS);
+    SAI_Block_x->CFGR2 &= ~(SAI_CFGR2_TRIS);
 
-    SAI_Block_x->CFGR1 |= SAI_TRIState;
+    SAI_Block_x->CFGR2 |= SAI_TRIState;
 }
 
 /*********************************************************************

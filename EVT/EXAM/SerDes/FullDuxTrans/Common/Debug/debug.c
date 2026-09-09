@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT  *******************************
 * File Name          : debug.c
 * Author             : WCH
-* Version            : V1.0.2
-* Date               : 2026/03/25
+* Version            : V1.0.3
+* Date               : 2026/09/08
 * Description        : This file contains all the functions prototypes for UART
 *                      Printf , Delay functions.
 *********************************************************************************
@@ -187,7 +187,7 @@ void USART_Printf_Init(uint32_t baudrate)
 __attribute__((used)) int _write(int fd, char *buf, int size)
 {
     int i = 0;
-
+    (void)fd;
     for(i = 0; i < size; i++)
     {
 #if(DEBUG == DEBUG_UART1)

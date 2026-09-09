@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT *******************************
 * File Name          : ch32h417_usbss_device.h"
 * Author             : WCH
-* Version            : V1.0.1
-* Date               : 2026/04/08
+* Version            : V1.0.2
+* Date               : 2026/09/09
 * Description        : header file of ch32h417_usbss_device.c
 *********************************************************************************
 * Copyright (c) 2025 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -19,6 +19,12 @@ extern "C" {
 #include "ch32h417.h"
 #include "hardware.h"    
 
+#define DEF_FUN_IF_TEST_EN             0x00
+
+#if ( DEF_FUN_IF_TEST_EN == 0x01 )    
+#define DEF_UP_U1_EN                   0x01
+#define DEF_UP_U2_EN                   0x01
+#endif
 
 /******************************************************************************/
 /* Endpoint Number */
@@ -77,7 +83,7 @@ extern "C" {
 #define NUM_HP_BUF                    ( 4 << 0 )
 #define DOWN_STREAM                   ( 1 << 16 )
 #define UP_STREAM                     ( 2 << 16 )
-
+#define USBSS_U1_EXIT_TIME            ( 1 << 9 )
       
 /******************************************************************************/
 typedef enum 

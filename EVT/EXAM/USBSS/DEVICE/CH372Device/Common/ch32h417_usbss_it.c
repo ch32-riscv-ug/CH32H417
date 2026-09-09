@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT *******************************
 * File Name          : ch32h417_it.c
 * Author             : WCH
-* Version            : V1.0.3
-* Date               : 2026/04/10
+* Version            : V1.0.4
+* Date               : 2026/09/09
 * Description        : USBSS functions Interrupt Service Routines.
 *********************************************************************************
 * Copyright (c) 2025 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -76,7 +76,23 @@ uint8_t USBSS_Endp_Clear_Frature( uint8_t dir_endp )
     {
         USBSS_EP_RX_TypeDef* endp = (USBSS_EP_RX_TypeDef*)( &USBSSD->EP1_RX + ( dir_endp - 1 ) * 2 );
         endp->UEP_RX_CR |= USBSS_EP_RX_CLR | USBSS_EP_RX_CHAIN_CLR;
-        endp->UEP_RX_CHAIN_MAX_NUMP = DEF_ENDP1_OUT_BURST_LEVEL;
+
+        if(( dir_endp & DEF_UEP_MASK ) == DEF_UEP1 )
+        {
+            endp->UEP_RX_DMA = (uint32_t)USBSS_EP1_Rx_Buf;
+            endp->UEP_RX_CHAIN_MAX_NUMP = DEF_ENDP1_OUT_BURST_LEVEL;
+        }
+        else if(( dir_endp & DEF_UEP_MASK ) == DEF_UEP2 )
+        {
+            endp->UEP_RX_DMA = (uint32_t)USBSS_EP2_Rx_Buf;
+            endp->UEP_RX_CHAIN_MAX_NUMP = DEF_ENDP2_OUT_BURST_LEVEL;
+        }
+        else if(( dir_endp & DEF_UEP_MASK ) == DEF_UEP3 )
+        {
+            endp->UEP_RX_DMA = (uint32_t)USBSS_EP3_Rx_Buf;
+            endp->UEP_RX_CHAIN_MAX_NUMP = DEF_ENDP3_OUT_BURST_LEVEL;
+        }
+        
     }
     return 0x00;
 }

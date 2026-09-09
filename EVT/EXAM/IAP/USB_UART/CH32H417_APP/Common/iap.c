@@ -2,7 +2,7 @@
  * File Name          : iap.c
  * Author             : WCH
  * Version            : V1.0.2
- * Date               : 2026/03/27
+ * Date               : 2026/09/07
  * Description        : IAP
 *********************************************************************************
 * Copyright (c) 2021 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -43,11 +43,19 @@ vu32 Flash_Erase_Page_Size = Size_8KB;
 u8 RecData_Deal(void)
 {
     u8 s;
+    if(((*(vu32*)FLASH_CFGR0_BASE) & (1<<28)) != 0)
+    {
+        Flash_Erase_Page_Size = Size_8KB;
+    }
+    else 
+    {
+        Flash_Erase_Page_Size = Size_4KB;
+    }
     switch ( isp_cmd_t->other.buf[0]) 
     {
     case CMD_JUMP_IAP:
-        FLASH_Unlock_Fast();
-        FLASH_ErasePage(CalAddr & (~(Flash_Erase_Page_Size-1)));
+        FLASH_ROM_ERASE(CalAddr & (~(Flash_Erase_Page_Size-1)),Flash_Erase_Page_Size);
+        FLASH_Unlock();
         FLASH_ProgramWord(CalAddr, 0x5aa55aa5);
         FLASH->CTLR |= ((uint32_t)0x00008000);
         FLASH->CTLR |= ((uint32_t)0x00000080);
@@ -73,10 +81,18 @@ u8 RecData_Deal(void)
 u8 UART_RecData_Deal(void)
 {
     u8 s;
+    if(((*(vu32*)FLASH_CFGR0_BASE) & (1<<28)) != 0)
+    {
+        Flash_Erase_Page_Size = Size_8KB;
+    }
+    else 
+    {
+        Flash_Erase_Page_Size = Size_4KB;
+    }
     switch ( isp_cmd_t->UART.Cmd) {
     case CMD_JUMP_IAP:
-        FLASH_Unlock_Fast();
-        FLASH_ErasePage(CalAddr & (~(Flash_Erase_Page_Size-1)));
+        FLASH_ROM_ERASE(CalAddr & (~(Flash_Erase_Page_Size-1)),Flash_Erase_Page_Size);
+        FLASH_Unlock();
         FLASH_ProgramWord(CalAddr, 0x5aa55aa5);
         FLASH->CTLR |= ((uint32_t)0x00008000);
         FLASH->CTLR |= ((uint32_t)0x00000080);

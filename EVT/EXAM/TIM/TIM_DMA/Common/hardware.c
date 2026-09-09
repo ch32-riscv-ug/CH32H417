@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT  *******************************
 * File Name          : hardware.c
 * Author             : WCH
-* Version            : V1.0.0
-* Date               : 2025/03/01
+* Version            : V1.0.1
+* Date               : 2026/09/08
 * Description        : This file provides all the hardware firmware functions.
 *********************************************************************************
 * Copyright (c) 2025 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -81,9 +81,6 @@ void TIM1_DMA_Init(DMA_Channel_TypeDef *DMA_CHx, u32 ppadr, u32 memadr, u16 bufs
 
     RCC_HBPeriphClockCmd(RCC_HBPeriph_DMA1, ENABLE);
     RCC_HB2PeriphClockCmd(RCC_HB2Periph_AFIO, ENABLE);
-
-    NVIC_SetPriority(DMA1_Channel1_IRQn,0);
-    NVIC_EnableIRQ(DMA1_Channel1_IRQn);
 
     DMA_DeInit(DMA_CHx);
     DMA_InitStructure.DMA_PeripheralBaseAddr = ppadr;

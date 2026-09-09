@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT  *******************************
 * File Name          : ch32h417.h
 * Author             : WCH
-* Version            : V1.0.5
-* Date               : 2026/03/17
+* Version            : V1.0.6
+* Date               : 2026/09/09
 * Description        : CH32H417_416_415 Device Peripheral Access Layer Header File.
 *********************************************************************************
 * Copyright (c) 2025 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -30,7 +30,7 @@
 
 /* CH32H417 Standard Peripheral Library version number */
 #define __CH32H417_STDPERIPH_VERSION_MAIN   (0x01) /* [15:8] main version */
-#define __CH32H417_STDPERIPH_VERSION_SUB    (0x05) /* [7:0] sub version */
+#define __CH32H417_STDPERIPH_VERSION_SUB    (0x06) /* [7:0] sub version */
 #define __CH32H417_STDPERIPH_VERSION        ( (__CH32H417_STDPERIPH_VERSION_MAIN << 8)\
                                              |(__CH32H417_STDPERIPH_VERSION_SUB << 0))
 
@@ -887,7 +887,9 @@ typedef struct
     __IO uint8_t LINK_U3_WKUP_FILTER;
     uint8_t Reserved5[1];  
     __IO uint16_t LINK_U3_WKUP_TMR;     
-    uint8_t Reserved6[12];          
+    __IO uint32_t LINK_U1_EXIT_CFG;   
+    __IO uint32_t LINK_U2_EXIT_CFG;   
+    __IO uint32_t LINK_U3_EXIT_CFG;      
     __IO uint16_t LINK_ISO_DLY;      
     uint8_t Reserved7[14];          
     __IO uint16_t LINK_LPM_CR;       
@@ -947,8 +949,9 @@ typedef struct
     __IO uint8_t LINK_U3_WKUP_FILTER;
     uint8_t Reserved5[15];          
     __IO uint16_t LINK_ISO_DLY;      
-    uint8_t Reserved6[14];          
-    __IO uint16_t LINK_LPM_CR;       
+    uint8_t Reserved6[10];      
+    __IO uint32_t LINK_TX_ROUTE;          
+    __IO uint16_t LINK_LPM_CR;             
     uint8_t Reserved7[2];                 
     __IO uint32_t LINK_LMP_PORT_CAP; 
     __IO uint32_t LINK_LMP_RX_DATA0; 
@@ -5845,7 +5848,7 @@ typedef struct
 /******************  Bit definition for DMA_CFGR5 register  *******************/
 #define  DMA_CFGR5_EN                                ((uint16_t)0x0001)            /* Channel enable */
 #define  DMA_CFGR5_TCIE                              ((uint16_t)0x0002)            /* Transfer complete interrupt enable */
-#define  DMA_CCFGR_HTIE                              ((uint16_t)0x0004)            /* Half Transfer interrupt enable */
+#define  DMA_CFGR5_HTIE                              ((uint16_t)0x0004)            /* Half Transfer interrupt enable */
 #define  DMA_CFGR5_TEIE                              ((uint16_t)0x0008)            /* Transfer error interrupt enable */
 #define  DMA_CFGR5_DIR                               ((uint16_t)0x0010)            /* Data transfer direction */
 #define  DMA_CFGR5_CIRC                              ((uint16_t)0x0020)            /* Circular mode */
@@ -5867,6 +5870,7 @@ typedef struct
 #define  DMA_CFGR5_MEM2MEM                           ((uint16_t)0x4000)            /* Memory to memory mode enable */
 #define  DMA_CFGR5_DOUBLE_MODE                       ((uint16_t)0x8000)            /* Memory to double mode */
 #define  DMA_CFGR5_FLAG_CURMEM                       ((uint32_t)0x00010000) 
+#define  DMA_CCFGR_HTIE                              DMA_CFGR5_HTIE
 
 /*******************  Bit definition for DMA_CFGR6 register  *******************/
 #define  DMA_CFGR6_EN                                ((uint16_t)0x0001)            /* Channel enable */

@@ -1,5 +1,5 @@
 
-南京沁恒微电子股份有限公司 2026.04
+南京沁恒微电子股份有限公司 2026.09
 最新资料请到我们的网站上查询
 https://wch.cn
 
@@ -39,6 +39,7 @@ https://wch.cn
   |      |      |      |      |-- SoftUART：I/O口模拟串口例程 
   |      |      |      |      |-- LTDC_LVGL：使用LTDC 在屏幕上显示动画
   |      |      |      |      |-- FATFS_eMMC：八线操作EMMC卡移植文件读写系统FATFS
+  |      |      |      |      |-- Betaflight：H41x Betaflight 库
   |      |      |      |-- CAN
   |      |      |      |      |-- Networking：CAN例程：正常模式，标准帧和扩展帧数据收发
   |      |      |      |      |-- TestMode：测试模式，包括静默模式、回环模式、回环静默模式
@@ -63,6 +64,7 @@ https://wch.cn
   |      |      |      |      |      |-- Interrupt_VTF：免表中断例程  
   |      |      |      |      |-- OS： 
   |      |      |      |      |      |-- FreeRTOS：FreeRTOS例程
+  |      |      |      |      |      |-- RT_Thread：RT_Thread例程
   |      |      |      |-- CRC
   |      |      |      |      |-- CRC_Calculation：CRC例程 
   |      |      |      |-- DAC 
@@ -331,6 +333,8 @@ https://wch.cn
   |	     |      |      |      |      |      |      |-- UVC-DVP: 从DVP获取数据通过USB上传，支持MJPEG格式。 
   |      |      |      |      |      |-- HOST
   |      |      |      |      |      |      |-- HOST_SS_ACCESS_SECTOR：USBSS 扫盘例程
+  |      |      |      |      |      |      |-- Host_SS_Hub_Access_Sector: 此程序演示了CH32H417作为USB主机，通过外部USB集线器访问和读写U盘扇区。
+  |      |      |      |      |      |      |-- Host_SS_Hub_Udisk_Exams: 此例程演示了CH32H417如何作为USB主机来控制HUB下的U盘（支持文件系统）。
   |      |      |      |-- USBPD
   |      |      |      |      |-- USBPD_SNK：PD SNK 例程
   |      |      |      |      |-- USBPD_SRC：PD SRC 例程   

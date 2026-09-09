@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT *******************************
 * File Name          : ch32h417_usbss_device.c
 * Author             : WCH
-* Version            : V1.0.3
-* Date               : 2026/04/10
+* Version            : V1.0.4
+* Date               : 2026/09/09
 * Description        : This file provides all the USBSS firmware functions.
 *********************************************************************************
 * Copyright (c) 2025 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -69,7 +69,10 @@ void USBSS_Device_Init( FunctionalState sta )
         USBSSD->LINK_CFG |= LINK_U1_PING_EN;
 #endif
         USBSSD->LINK_LPM_CR |= LINK_LPM_EN;                            
-        USBSSD->LINK_CFG |= LINK_RX_TERM_EN;                                     
+        USBSSD->LINK_CFG |= LINK_RX_TERM_EN;         
+
+        USBSSD->LINK_U1_EXIT_CFG |= USBSS_U1_EXIT_TIME;
+
         USBSSD->LINK_INT_CTRL =  LINK_IE_TX_LMP | LINK_IE_RX_LMP | LINK_IE_RX_LMP_TOUT | LINK_IE_STATE_CHG
                                     | LINK_IE_WARM_RST | LINK_IE_TERM_PRES;
 
@@ -86,7 +89,13 @@ void USBSS_Device_Init( FunctionalState sta )
         USBSSD->USB_CONTROL |= USBSS_FORCE_RST;
         USBSSD->USB_STATUS = USBSS_UIF_TRANSFER;
         USBSSD->USB_CONTROL = USBSS_UIE_TRANSFER | USBSS_UDIE_SETUP | USBSS_UDIE_STATUS | USBSS_DMA_EN | USBSS_SETUP_FLOW;
-
+#if ( DEF_FUN_IF_TEST_EN == 0x01 )    
+        USBSSD->LINK_CFG |= LINK_U1_ALLOW;
+        USBSSD->LINK_CFG |= LINK_U2_ALLOW;
+        USBSS_Dev_Info.u1_enable = ENABLE;
+        USBSS_Dev_Info.u2_enable = ENABLE;
+        USBSSD->LINK_CFG |= LINK_COMPLIANCE_EN;
+#endif
         USBSS_CFG_MOD( );
         USBSS_Device_Endp_Init ( );
         NVIC_EnableIRQ( USBSS_IRQn );
@@ -458,7 +467,7 @@ void USBSS_LINK_Handle( USBSSH_TypeDef *USBSSHx )
         }
         else                                                            // UPSTREAM
         {
-            if(( link_lpm_r_data0 & LMP_SUBTYPE_MASK ) == LMP_PORT_CFG )           // device RX PORT_CFG, return PORT_CFG_RES
+            if((( link_lpm_r_data0 & LMP_SUBTYPE_MASK ) == LMP_PORT_CFG ) && ( USBSSHx->LINK_LMP_PORT_CAP & LINK_LMP_RX_CAP_VLD ))           // device RX PORT_CFG, return PORT_CFG_RES
             {
                 USBSSHx->LINK_LMP_TX_DATA0 = LMP_LINK_SPEED | LMP_PORT_CFG_RES | LMP_HP;
                 USBSSHx->LINK_LMP_TX_DATA1 = 0x0;
@@ -590,6 +599,7 @@ void USBSS_CFG_MOD( void )
     USBSS_PHY_Cfg( 0, 0x0D, 0x79AA );           
     USBSS_PHY_Cfg( 0, 0x15, 0x4430 );       
     USBSS_PHY_Cfg( 0, 0x13, 0x0010 );
+    USBSS_PHY_Cfg( 0, 0x11, 0x0501 );
 
     ( *((__IO uint32_t *)0x5003C018 )) = 0xB0054000;        
 }

@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT *******************************
 * File Name          : ch32h417_it.c
 * Author             : WCH
-* Version            : V1.0.2
-* Date               : 2026/01/21
+* Version            : V1.0.3
+* Date               : 2026/09/09
 * Description        : USBSS functions Interrupt Service Routines.
 *********************************************************************************
 * Copyright (c) 2025 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -77,7 +77,12 @@ uint8_t USBSS_Endp_Clear_Frature( uint8_t dir_endp )
     {
         USBSS_EP_RX_TypeDef* endp = (USBSS_EP_RX_TypeDef*)( &USBSSD->EP1_RX + ( dir_endp - 1 ) * 2 );
         endp->UEP_RX_CR |= USBSS_EP_RX_CLR | USBSS_EP_RX_CHAIN_CLR;
-        endp->UEP_RX_CHAIN_MAX_NUMP = DEF_ENDP1_OUT_BURST_LEVEL;
+
+        if(( dir_endp & DEF_UEP_MASK ) == DEF_UEP1 )
+        {
+            endp->UEP_RX_DMA = (uint32_t)USBSS_EP1_Rx_Buf;
+            endp->UEP_RX_CHAIN_MAX_NUMP = DEF_ENDP1_OUT_BURST_LEVEL;
+        }
     }
     return 0x00;
 }
@@ -462,8 +467,8 @@ void USBSS_IRQHandler( void )
                         {
                             USBSS_EP0_Buf[ 0 ] = 0x02;
                         }
+                        USBSS_EP0_Buf[ 0 ] |= ( USBSS_Dev_Info.u2_enable << 3 ) | ( USBSS_Dev_Info.u1_enable << 2 );
                     }
-                    USBSS_EP0_Buf[ 0 ] |= ( USBSS_Dev_Info.u2_enable << 3 ) | ( USBSS_Dev_Info.u1_enable << 2 );
                     if ( USBSS_SetupReqLen > 2 )
                     {
                         USBSS_SetupReqLen = 2;
@@ -483,7 +488,7 @@ void USBSS_IRQHandler( void )
         if( errflag == 0xFF )
         {
             /* if one request not support, return stall */
-            USBSSD->UEP0_TX_CTRL = USBSS_EP0_TX_STALL ;
+            USBSSD->UEP0_TX_CTRL = USBSS_EP0_TX_STALL;
             USBSSD->UEP0_RX_CTRL = USBSS_EP0_RX_ERDY | USBSS_EP0_RX_STALL;
         }
         else
@@ -492,9 +497,9 @@ void USBSS_IRQHandler( void )
             if( USBSS_SetupReqType & DEF_UEP_IN )
             {
                 /* tx */
-                if(USBSS_SetupReqLen == 0)
+                if( USBSS_SetupReqLen == 0 )
                 {
-                    USBSSD->UEP0_RX_CTRL = USBSS_EP0_RX_ERDY | USBSS_EP0_RX_ACK ;
+                    USBSSD->UEP0_RX_CTRL = USBSS_EP0_RX_ERDY | USBSS_EP0_RX_ACK;
                 }
                 else 
                 {

@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT *******************************
 * File Name          : system_ch32h417.c
 * Author             : WCH
-* Version            : V1.0.1
-* Date               : 2025/10/16
+* Version            : V1.0.2
+* Date               : 2026/09/08
 * Description        : CH32H417 Device Peripheral Access Layer System Source File.
 *                      For HSE = 25Mhz
 *********************************************************************************
@@ -31,7 +31,7 @@ uint32_t HCLKClock;
 #ifdef SYSCLK_400M_CoreCLK_V5F_400M_V3F_100M_HSE
 uint32_t SystemClock = SYSCLK_400M_CoreCLK_V5F_400M_V3F_100M_HSE;         /* System Clock Frequency */
 uint32_t SystemCoreClock = 100000000;
-#elif defined SYSCLK_480_CoreCLK_V5F_240M_V3F_120M_HSE
+#elif defined SYSCLK_480M_CoreCLK_V5F_240M_V3F_120M_HSE
 uint32_t SystemClock = SYSCLK_480M_CoreCLK_V5F_240M_V3F_120M_HSE;        /* System Clock Frequency */
 uint32_t SystemCoreClock = 120000000;
 #elif defined SYSCLK_400M_CoreCLK_V5F_400M_V3F_100M_HSI

@@ -20,6 +20,7 @@
 			]
 		},
 		"downloadMerged": false,
-		"loadMergedBeforeDebug": false
+		"loadMergedBeforeDebug": false,
+		"retainOffsetData": true
 	}
 }

@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT *******************************
 * File Name          : ch32h417_usbss_device.h"
 * Author             : WCH
-* Version            : V1.0.1
-* Date               : 2026/04/10
+* Version            : V1.0.2
+* Date               : 2026/09/09
 * Description        : header file of ch32h417_usbss_device.c
 * Copyright (c) 2025 Nanjing Qinheng Microelectronics Co., Ltd.
 ********************************************************************************* 
@@ -19,6 +19,13 @@ extern "C" {
  
 #include "ch32h417.h"  
 #include "hardware.h"
+
+#define DEF_FUN_IF_TEST_EN             0x00
+
+#if ( DEF_FUN_IF_TEST_EN == 0x01 )    
+#define DEF_UP_U1_EN                   0x01
+#define DEF_UP_U2_EN                   0x01
+#endif
 
 #define DEF_USB30_BCD                 0x03
 #define DEF_USB20_BCD                 0x02
@@ -136,7 +143,8 @@ extern "C" {
 #define DOWN_STREAM                   ( 1 << 16 )
 #define UP_STREAM                     ( 2 << 16 )
 
-#define DEF_TX_CHAIN_TIMEOUT              1000000
+#define DEF_TX_CHAIN_TIMEOUT          1000000
+#define USBSS_U1_EXIT_TIME            ( 1 << 9 )
 
 extern __attribute__ ((aligned(4))) uint8_t USBSS_EP0_Buf[ DEF_USBSSD_UEP0_SIZE ];
 extern __attribute__ ((aligned(4))) uint8_t USBSS_EP1_Tx_Buf[ DEF_USB_EP1_SS_SIZE * 32 ];

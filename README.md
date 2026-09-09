@@ -651,7 +651,7 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 |---|---|---|---|
 | CH32H417DS0.PDF | datasheet | [page](https://www.wch-ic.com/downloads/CH32H417DS0_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF) v1.8 | [page](https://www.wch.cn/downloads/CH32H417DS0_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF) v1.8 |
 | CH32H417RM.PDF | reference-manual | [page](https://www.wch-ic.com/downloads/CH32H417RM_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417RM.PDF) v1.7 | [page](https://www.wch.cn/downloads/CH32H417RM_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417RM.PDF) v1.7 |
-| CH32H417EVT.ZIP | evt | [page](https://www.wch-ic.com/downloads/CH32H417EVT_ZIP.html) [mirror](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT) v1.3 | [page](https://www.wch.cn/downloads/CH32H417EVT_ZIP.html) [mirror](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT) v1.5 |
+| CH32H417EVT.ZIP | evt | [page](https://www.wch-ic.com/downloads/CH32H417EVT_ZIP.html) [mirror](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT) v1.3 | [page](https://www.wch.cn/downloads/CH32H417EVT_ZIP.html) [mirror](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT) v1.6 |
 
 ### Evaluation boards
 

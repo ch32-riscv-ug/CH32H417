@@ -1,0 +1,7 @@
+Betaflight：Betaflight is flight controller software (firmware) used to fly multi-rotor craft and fixed 
+wing craft. Betaflight focuses on flight performance, leading-edge feature additions, and wide target support.
+Address:https://github.com/betaflight/betaflight
+
+CH32H41x_BetaFlight_Lib:This is the CH32H41x driver for Betaflight, and it should be placed in the lib/main/ directory 
+of the Betaflight source code.
+Address:https://github.com/openwch/CH32H41x_BetaFlight_Lib

@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT *******************************
 * File Name          : ch32h417_hsem.c
 * Author             : WCH
-* Version            : V1.0.0
-* Date               : 2025/03/01
+* Version            : V1.0.1
+* Date               : 2026/09/08
 * Description        : This file provides all the HSEM firmware functions.
 *********************************************************************************
 * Copyright (c) 2025 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -83,7 +83,7 @@ FunctionalState HSEM_GetOneSemTakenState(HSEM_ID_TypeDef HSEM_ID)
 {
     FunctionalState status = DISABLE;
 
-    if( (HSEM->RX[HSEM_ID] & (1 << 31)) == (1 << 31))
+    if( (HSEM->RX[HSEM_ID] & (1 << 31)) == (uint32_t)(1 << 31))
     {
         status = ENABLE;
     }

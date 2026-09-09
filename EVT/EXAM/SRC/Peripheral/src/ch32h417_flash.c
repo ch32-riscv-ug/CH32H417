@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT  *******************************
 * File Name          : ch32h417_flash.c
 * Author             : WCH
-* Version            : V1.0.2
-* Date               : 2026/04/08
+* Version            : V1.0.3
+* Date               : 2026/08/18
 * Description        : This file provides all the FLASH firmware functions.
 *********************************************************************************
 * Copyright (c) 2025 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -991,6 +991,7 @@ static void ROM_ERASE(uint32_t StartAddr, uint32_t Cnt, uint32_t Erase_Size)
  *          Length - Erases Flash start Length.
  *        If the flash is Dual flash mode - (StartAddr%(8KB) == 0).
  *        If the flash is single flash mode - (StartAddr%(4KB) == 0).
+ *        Recommended for FLASH erasing.
  *
  * @return  FLASH Status - The returned value can be: FLASH_ADR_RANGE_ERROR,
  *        FLASH_ALIGN_ERROR, FLASH_OP_RANGE_ERROR or FLASH_COMPLETE.
@@ -1182,8 +1183,8 @@ FLASH_Status FLASH_ROM_ERASE(uint32_t StartAddr, uint32_t Length)
  *
  * @param   StartAddr - Writes Flash start address(StartAddr%256 == 0).
  *          Length - Writes Flash start Length(Length%256 == 0).
- *
  *          pbuf - Writes Flash value buffer.
+ *          Recommended for FLASH programming.
  *
  * @return  FLASH Status - The returned value can be: FLASH_ADR_RANGE_ERROR,
  *        FLASH_ALIGN_ERROR, FLASH_OP_RANGE_ERROR or FLASH_COMPLETE.

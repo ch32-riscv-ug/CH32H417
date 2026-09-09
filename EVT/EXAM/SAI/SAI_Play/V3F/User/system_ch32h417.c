@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT *******************************
 * File Name          : system_ch32h417.c
 * Author             : WCH
-* Version            : V1.0.1
-* Date               : 2025/10/16
+* Version            : V1.0.2
+* Date               : 2026/09/08
 * Description        : CH32H417 Device Peripheral Access Layer System Source File.
 *                      For HSE = 25Mhz
 *********************************************************************************

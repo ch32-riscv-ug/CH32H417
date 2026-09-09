@@ -1,0 +1,25 @@
+{
+	"kernelName": "V3F",
+	"isMaster": true,
+	"debugOptions": {
+		"dualCoreDebug": true,
+		"slaveGDBPort": 3334,
+		"masterGDBPort": 3333
+	},
+	"mate": "../V5F",
+	"mergedOptions": {
+		"enabled": false,
+		"mergedList": {
+			"name": "Merge.Bin",
+			"filledWith": "0xFF",
+			"files": [
+				{
+					"filePath": "C:\\Users\\OWNER\\Desktop\\留档文案\\日期档案\\20260729\\CH32H417_HOST_EVT\\HOST_HUB_UDISK_EXAMS\\CH32H417_HOST_HUB_ACCESS_SECTOR\\USBSS\\HOST\\HOST_SS_HUB_ACCESS_SECTOR\\V5F\\obj\\HOST_SS_HUB_ACCESS_SECTOR_V5F.hex"
+				}
+			]
+		},
+		"downloadMerged": false,
+		"loadMergedBeforeDebug": true,
+		"retainOffsetData": true
+	}
+}
