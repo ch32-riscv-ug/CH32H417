@@ -27,7 +27,7 @@
         },
         "zh": {
           "file_id": 529,
-          "version": "1.8",
+          "version": "1.9",
           "scope": "CH32H417QEU6, CH32H417MEU6, CH32H417WEU6, CH32H416RDU6, CH32H415REU6"
         }
       }
@@ -67,7 +67,7 @@
         },
         "zh": {
           "file_id": 532,
-          "version": "1.7",
+          "version": "1.8",
           "scope": "CH32H417QEU6, CH32H417MEU6, CH32H417WEU6, CH32H416RDU6, CH32H415REU6"
         }
       }
