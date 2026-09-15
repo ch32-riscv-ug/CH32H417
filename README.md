@@ -197,63 +197,63 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 
 <details><summary><b>CH32H415 alternate functions</b></summary>
 
-| Pad | default | (no route stated) | af-0 | af-1 | af-10 | af-11 | af-12 | af-13 | af-14 | af-15 | af-2 | af-3 | af-4 | af-5 | af-6 | af-7 | af-8 | af-9 |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| PA0 | ADC_IN0, OPA3_OUT0 | ADC_IN0, OPA3_OUT0 | - | TIM2_CH1_ETR | - | - | - | - | LTDC_R0 | - | TIM5_CH1 | TIM8_ETR | QSPI2_SIOX2 | PIOC_IO0 | TIM9_CH1 | USART2_CTS | USART6_TX | SDIO_CMD |
-| PA1 | ADC_IN1 | ADC_IN1 | - | TIM2_CH2 | - | - | - | - | LTDC_R2 | - | TIM5_CH2 | - | QSPI2_SIOX3 | - | TIM9_CH2 | USART2_RTS | USART6_RX | QSPI1_SIO3 |
-| PA2 | ADC_IN2, OPA3_P1 | ADC_IN2, OPA3_P1 | - | TIM2_CH3 | - | - | - | - | LTDC_R1 | - | TIM5_CH3 | USART6_CK | TIM9_CH3 | - | - | USART2_TX | - | - |
-| PA3 | ADC_IN3, OPA3_N1 | ADC_IN3, OPA3_N1 | - | TIM2_CH4 | - | - | - | - | LTDC_B5 | - | TIM5_CH4 | - | TIM9_CH4 | - | - | USART2_RX | TIM10_CH3 | LTDC_B2 |
-| PA4 | ADC_IN4, DAC1_OUT, OPA3_OUT1 | ADC_IN4, DAC1_OUT, OPA3_OUT1 | - | - | - | - | - | DVP_HSYNC | LTDC_VSYNC | - | TIM5_ETR | - | TIM9_ETR | SPI1_NSS | I2S3_WS, SPI3_NSS | USART2_CK | - | TIM10_CH4 |
-| PA5 | ADC_IN5, DAC2_OUT, OPA1_OUT1 | ADC_IN5, DAC2_OUT, OPA1_OUT1 | - | TIM2_CH1_ETR | - | DVP_VSYNC | - | - | LTDC_R4 | - | TIM1_BKIN2 | TIM8_CH1N | - | SPI1_SCK | - | - | - | TIM10_ETR |
-| PA6 | ADC_IN6, OPA1_P1 | ADC_IN6, OPA1_P1 | - | TIM1_BKIN | CMP_OUT | LTDC_HSYNC | - | DVP_PCLK | LTDC_G2 | - | TIM3_CH1 | TIM8_BKIN | - | SPI1_MISO | - | - | - | TIM10_CH1 |
-| PA7 | ADC_IN7, OPA1_N1 | ADC_IN7, OPA1_N1 | - | TIM1_CH1N | - | - | - | - | LTDC_VSYNC | - | TIM3_CH2 | TIM8_CH1N | - | SPI1_MOSI | - | - | - | TIM10_CH2 |
-| PA9 | OTG_VBUS | OTG_VBUS | - | TIM1_CH2 | - | - | - | DVP_D0 | LTDC_R5 | - | - | - | I2C3_SMBA | I2S2_CK, SPI2_SCK | - | USART1_TX | - | - |
-| PA10 | OTG_ID | OTG_ID | - | TIM1_CH3 | - | - | LTDC_B4 | DVP_D1 | LTDC_B1 | - | - | - | - | - | USART6_CK | USART1_RX | - | - |
-| PA11 | OTG_DM | OTG_DM | - | TIM1_CH4 | - | - | - | - | LTDC_R4 | - | - | - | USART3_CK | I2S2_WS, SPI2_NSS | USART6_RX | USART1_CTS | - | CAN1_RX |
-| PA12 | OTG_DP | OTG_DP | - | TIM1_ETR | - | - | TIM1_BKIN2 | - | LTDC_R5 | - | - | - | USART3_RTS | I2S2_CK, SPI2_SCK | USART6_TX | USART1_RTS | - | CAN1_TX |
-| PA13 | - | - | - | I2S3_SD, SPI3_MOSI | - | - | - | SAI_SD_B | - | - | - | - | USART3_TX | CAN_RX | - | I2C3_SDA | LTDC_B2 | - |
-| PA14 | - | - | - | I2S3_CK, SPI3_SCK | - | USART8_CK | - | SAI_SCK_B | LTDC_B6 | LTDC_R0 | - | - | USART3_RX | CAN_TX | - | I2C3_SCL | - | - |
-| PA15 | - | - | - | TIM2_CH1_ETR | LTDC_B4 | USART8_TX | - | SAI_FS_B | LTDC_B6 | LTDC_CLK | - | - | USART3_CTS | SPI1_NSS | I2S3_WS, SPI3_NSS | I2C3_SMBA | USART6_RTS | LTDC_R3 |
-| PB0 | ADC_IN8, CMP_P0, OPA1_P0 | ADC_IN8, CMP_P0, OPA1_P0 | MCO | TIM1_CH2N | - | - | - | TIM12_ETR | LTDC_G1 | - | TIM3_CH3 | TIM8_CH2N | TIM5_CH4 | - | DFSDM_CKOUT | - | USART6_CTS | LTDC_R3 |
-| PB1 | ADC_IN9, CMP_N0, OPA1_N0 | ADC_IN9, CMP_N0, OPA1_N0 | - | TIM1_CH3N | - | - | - | - | LTDC_G0 | - | TIM3_CH4 | TIM8_CH3N | - | TIM12_CH1 | DFSDM_DATIN1 | - | - | LTDC_R6 |
-| PB3 | - | - | - | TIM2_CH2 | - | USART8_RX | - | DVP_D5 | TIM12_ETR | - | - | - | CC1 | SPI1_SCK | I2S3_CK, SPI3_SCK | - | - | SDIO_D2 |
-| PB4 | - | - | - | - | TIM4_ETR | USART8_TX | - | - | USART7_CK | - | TIM3_CH1 | - | CC2 | SPI1_MISO | SPI3_MISO | I2S2_WS, SPI2_NSS | - | SDIO_D3 |
-| PB6 | - | - | TIM10_CH1 | - | QSPI1_SCSN | - | - | DVP_D5 | USART7_TX | - | TIM4_CH1 | CAN1_RX | I2C1_SCL | I2S3_MCK | I2C4_SCL | USART1_TX | - | CAN2_TX |
-| PB7 | - | - | TIM10_CH2 | - | USART8_CK | - | - | DVP_VSYNC | - | - | TIM4_CH2 | CAN1_TX | I2C1_SDA | - | I2C4_SDA | USART1_RX | - | - |
-| PB8 | SWCLK, USBHS_DP | SWCLK, USBHS_DP | - | TIM10_CH3 | SDIO_D4 | - | - | DVP_D6 | LTDC_B6 | - | TIM4_CH3 | - | I2C1_SCL | PIOC_IO0 | I2C4_SCL | - | USART6_RX | CAN1_RX |
-| PB9 | SWDIO, SWIO, USBHS_DM | SWDIO, SWIO, USBHS_DM | - | TIM10_CH4 | SDIO_D5 | I2C4_SMBA | - | DVP_D7 | LTDC_B7 | - | TIM4_CH4 | - | I2C1_SDA | I2S2_WS, SPI2_NSS | I2C4_SDA | PIOC_IO1 | USART6_TX | CAN1_TX |
-| PB10 | - | - | - | TIM2_CH3 | - | QSPI2_SCSXN | - | - | LTDC_G4 | - | TIM9_CH2 | LPTIM2_CH1 | I2C2_SCL | I2S2_CK, SPI2_SCK | - | USART3_TX | SDIO_CMD | USART6_CK |
-| PB11 | - | - | - | TIM2_CH4 | - | QSPI2_SIOX0 | - | - | LTDC_G5 | - | - | LPTIM2_ETR | I2C2_SDA | - | - | USART3_RX | SDIO_CK | TIM9_CH4 |
-| PB12 | - | - | - | TIM1_BKIN | LTDC_VSYNC | QSPI2_SIOX1 | - | CMP_OUT | USART7_RX | DVP_PCLK | TIM8_BKIN | - | I2C2_SMBA | I2S2_WS, SPI2_NSS | DFSDM_DATIN1 | USART3_CK | TIM9_CH3 | CAN2_RX |
-| PB13 | - | - | - | TIM1_CH1N | - | QSPI2_SIOX0 | - | DVP_D2 | USART7_TX | - | TIM8_BKIN2 | LPTIM2_OC | TIM9_ETR | I2S2_CK, SPI2_SCK | DFSDM_CKIN1 | USART3_CTS | DVP_HSYNC | CAN2_TX |
-| PB14 | - | - | - | TIM1_CH2N | - | QSPI2_SIOX1 | - | USART7_CK | LTDC_CLK | DVP_VSYNC | TIM9_CH1 | TIM8_CH2N | USART1_TX | SPI2_MISO | LTDC_G0 | USART3_RTS | USART6_RTS | SDIO_D0 |
-| PB15 | - | - | - | TIM1_CH3N | - | - | - | - | LTDC_G7 | - | TIM9_CH2 | TIM8_CH3N | USART1_RX | I2S2_SD, SPI2_MOSI | - | - | USART6_CTS | SDIO_D1 |
-| PC0 | ADC_IN10, HSADC_IN0 | ADC_IN10, HSADC_IN0 | TIM8_BKIN | - | QSPI2_SIO3 | LTDC_G2 | - | - | LTDC_R5 | - | - | DFSDM_CKIN0 | - | PIOC_IO1 | - | SAI_MCLK_A | - | I2C2_SCL |
-| PC1 | ADC_IN11, HSADC_IN1 | ADC_IN11, HSADC_IN1 | TIM8_CH1N | - | QSPI2_SCSXN | SDIO_CK | - | - | LTDC_G5 | - | TIM5_CH1 | DFSDM_DATIN0 | - | I2S2_SD, SPI2_MOSI | - | PIOC_IO0, SAI_SD_A | - | I2C2_SDA |
-| PC2 | ADC_IN12, HSADC_IN2, OPA3_P0 | ADC_IN12, HSADC_IN2, OPA3_P0 | TIM8_CH2N | - | QSPI2_SIOX0 | - | - | - | - | - | TIM5_CH2 | DFSDM_CKIN1 | - | SPI2_MISO | DFSDM_CKOUT | SAI_SCK_A | PIOC_IO1 | I2C2_SMBA |
-| PC3 | ADC_IN13, HSADC_IN3, OPA3_N0 | ADC_IN13, HSADC_IN3, OPA3_N0 | TIM8_CH3N | - | QSPI2_SIOX1 | - | - | - | - | - | TIM5_CH3 | DFSDM_DATIN1 | - | I2S2_SD, SPI2_MOSI | - | SAI_FS_A | - | - |
-| PC4 | ADC_IN14, CMP_N1, OPA1_OUT0 | ADC_IN14, CMP_N1, OPA1_OUT0 | - | - | - | - | - | - | LTDC_R7 | - | - | - | - | - | CAN3_RX | I3C_SCL | - | - |
-| PC6 | - | - | - | - | - | SWPMI_IO | - | DVP_D0 | LTDC_HSYNC | - | TIM3_CH1 | TIM8_CH1 | - | I2S2_MCK | - | USART4_TX | - | SDIO_D6 |
-| PC7 | - | - | - | - | - | SWPMI_TX | - | DVP_D1 | LTDC_G6 | - | TIM3_CH2 | TIM8_CH2 | - | - | I2S3_MCK | USART4_RX | - | SDIO_D7 |
-| PC8 | - | - | - | - | - | SWPMI_RX | - | DVP_D2 | LTDC_G4 | - | TIM3_CH3 | TIM8_CH3 | - | - | TIM9_ETR | USART4_CK | USART7_RTS | - |
-| PC9 | - | - | - | - | LTDC_G3 | SWPMI_SUP | - | DVP_D3 | LTDC_B2 | SAI_MCLK_B | TIM3_CH4 | TIM8_CH4 | I2C3_SDA | SPI3_MISO | TIM9_CH1 | - | USART7_CTS | QSPI1_SIO0 |
-| PC10 | - | - | - | - | LTDC_B1 | SWPMI_RX | - | DVP_D8 | LTDC_R2 | LTDC_HSYNC | TIM9_CH2 | - | - | - | I2S3_CK, SPI3_SCK | USART3_TX | USART6_TX | QSPI1_SIO1 |
-| PC11 | - | - | - | - | - | - | - | DVP_D4 | LTDC_B4 | LTDC_VSYNC | TIM9_CH4 | - | - | - | SPI3_MISO | USART3_RX | USART6_RX | QSPI1_SCSXN |
-| PC12 | - | - | - | - | - | - | - | DVP_D9 | LTDC_R6 | LTDC_DE | TIM9_CH3 | - | - | - | I2S3_SD, SPI3_MOSI | USART3_CK | USART7_TX | - |
-| PD3 | - | - | - | - | - | - | - | DVP_D5 | LTDC_G7 | LTDC_R6 | TIM11_CH1 | DFSDM_CKOUT | - | I2S2_CK, SPI2_SCK | - | USART2_CTS | USART6_CK | TIM3_CH1 |
-| PE0 | - | - | - | LPTIM1_CH1 | - | DVP_D0 | - | TIM11_CH1 | LTDC_B1 | LTDC_B3 | - | - | USART5_TX | - | - | USART4_RTS | - | LTDC_B4 |
-| PE3 | - | - | TIM8_CH1 | - | - | USART5_TX | - | DVP_D3 | - | - | TIM4_CH1 | TIM12_CH1 | - | PIOC_IO0 | SAI_SD_B | - | - | - |
-| PE4 | - | - | TIM8_CH2 | - | - | - | - | DVP_D4 | LTDC_B0 | - | TIM4_CH2 | TIM12_CH2 | PIOC_IO1 | SPI4_NSS | SAI_FS_A | - | - | - |
-| PE5 | - | - | TIM8_CH3 | - | - | - | - | DVP_D6 | LTDC_G0 | - | TIM4_CH3 | TIM12_CH3 | TIM9_CH3 | SPI4_MISO | SAI_SCK_A | - | - | - |
-| PE6 | - | - | TIM8_CH4 | TIM1_BKIN2 | - | CMP_OUT | - | DVP_D7 | LTDC_G1 | - | TIM4_CH4 | TIM12_CH4 | TIM9_CH4 | SPI4_MOSI | SAI_SD_A | - | USART8_CK | - |
-| PE11 | - | - | - | TIM1_CH2 | - | - | - | - | LTDC_G3 | - | - | - | - | SPI4_NSS | - | QSPI2_SCSN | SDIO_D3 | - |
-| PE12 | - | - | - | TIM1_CH3N | - | - | - | CMP_OUT | LTDC_B4 | - | - | - | - | SPI4_SCK | - | QSPI2_SIO0 | SDIO_D4 | - |
-| PE13 | - | - | - | TIM1_CH3 | - | - | - | - | LTDC_DE | - | TIM12_CH2 | - | - | SPI4_MISO | - | QSPI2_SIO1 | SDIO_D5 | - |
-| PE14 | - | - | - | TIM1_CH4 | - | - | - | LTDC_CLK | - | - | TIM12_CH3 | I3C_SCL | - | SPI4_MOSI | - | QSPI2_SIO2 | SDIO_D6 | - |
-| PE15 | - | - | - | TIM1_BKIN | - | USART5_CK | - | CMP_OUT | LTDC_R7 | - | TIM12_CH4 | I3C_SDA | - | - | - | QSPI2_SIO3 | SDIO_D7 | - |
-| PF3 | - | - | - | - | - | DVP_D9 | - | DVP_VSYNC | LTDC_B0 | LTDC_G5 | CAN3_TX | - | - | SPI1_MISO | - | USART4_RX | - | QSPI1_SIOX2 |
-| PF4 | - | - | - | LPTIM1_ETR | - | DVP_D8 | - | DVP_D2 | LTDC_B2 | LTDC_G6 | CAN3_RX | - | - | SPI1_NSS | - | USART4_TX | - | LTDC_G3 |
-| PF5 | - | - | - | LPTIM1_CH2 | - | - | - | DVP_D3 | LTDC_B3 | LTDC_G7 | - | - | USART5_RX | SPI1_SCK | - | - | - | QSPI1_SIOX3 |
+| Pad | default | af-0 | af-1 | af-10 | af-11 | af-12 | af-13 | af-14 | af-15 | af-2 | af-3 | af-4 | af-5 | af-6 | af-7 | af-8 | af-9 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| PA0 | ADC_IN0, OPA3_OUT0 | - | TIM2_CH1_ETR | - | - | - | - | LTDC_R0 | - | TIM5_CH1 | TIM8_ETR | QSPI2_SIOX2 | PIOC_IO0 | TIM9_CH1 | USART2_CTS | USART6_TX | SDIO_CMD |
+| PA1 | ADC_IN1 | - | TIM2_CH2 | - | - | - | - | LTDC_R2 | - | TIM5_CH2 | - | QSPI2_SIOX3 | - | TIM9_CH2 | USART2_RTS | USART6_RX | QSPI1_SIO3 |
+| PA2 | ADC_IN2, OPA3_P1 | - | TIM2_CH3 | - | - | - | - | LTDC_R1 | - | TIM5_CH3 | USART6_CK | TIM9_CH3 | - | - | USART2_TX | - | - |
+| PA3 | ADC_IN3, OPA3_N1 | - | TIM2_CH4 | - | - | - | - | LTDC_B5 | - | TIM5_CH4 | - | TIM9_CH4 | - | - | USART2_RX | TIM10_CH3 | LTDC_B2 |
+| PA4 | ADC_IN4, DAC1_OUT, OPA3_OUT1 | - | - | - | - | - | DVP_HSYNC | LTDC_VSYNC | - | TIM5_ETR | - | TIM9_ETR | SPI1_NSS | I2S3_WS, SPI3_NSS | USART2_CK | - | TIM10_CH4 |
+| PA5 | ADC_IN5, DAC2_OUT, OPA1_OUT1 | - | TIM2_CH1_ETR | - | DVP_VSYNC | - | - | LTDC_R4 | - | TIM1_BKIN2 | TIM8_CH1N | - | SPI1_SCK | - | - | - | TIM10_ETR |
+| PA6 | ADC_IN6, OPA1_P1 | - | TIM1_BKIN | CMP_OUT | LTDC_HSYNC | - | DVP_PCLK | LTDC_G2 | - | TIM3_CH1 | TIM8_BKIN | - | SPI1_MISO | - | - | - | TIM10_CH1 |
+| PA7 | ADC_IN7, OPA1_N1 | - | TIM1_CH1N | - | - | - | - | LTDC_VSYNC | - | TIM3_CH2 | TIM8_CH1N | - | SPI1_MOSI | - | - | - | TIM10_CH2 |
+| PA9 | OTG_VBUS | - | TIM1_CH2 | - | - | - | DVP_D0 | LTDC_R5 | - | - | - | I2C3_SMBA | I2S2_CK, SPI2_SCK | - | USART1_TX | - | - |
+| PA10 | OTG_ID | - | TIM1_CH3 | - | - | LTDC_B4 | DVP_D1 | LTDC_B1 | - | - | - | - | - | USART6_CK | USART1_RX | - | - |
+| PA11 | OTG_DM | - | TIM1_CH4 | - | - | - | - | LTDC_R4 | - | - | - | USART3_CK | I2S2_WS, SPI2_NSS | USART6_RX | USART1_CTS | - | CAN1_RX |
+| PA12 | OTG_DP | - | TIM1_ETR | - | - | TIM1_BKIN2 | - | LTDC_R5 | - | - | - | USART3_RTS | I2S2_CK, SPI2_SCK | USART6_TX | USART1_RTS | - | CAN1_TX |
+| PA13 | - | - | I2S3_SD, SPI3_MOSI | - | - | - | SAI_SD_B | - | - | - | - | USART3_TX | CAN_RX | - | I2C3_SDA | LTDC_B2 | - |
+| PA14 | - | - | I2S3_CK, SPI3_SCK | - | USART8_CK | - | SAI_SCK_B | LTDC_B6 | LTDC_R0 | - | - | USART3_RX | CAN_TX | - | I2C3_SCL | - | - |
+| PA15 | - | - | TIM2_CH1_ETR | LTDC_B4 | USART8_TX | - | SAI_FS_B | LTDC_B6 | LTDC_CLK | - | - | USART3_CTS | SPI1_NSS | I2S3_WS, SPI3_NSS | I2C3_SMBA | USART6_RTS | LTDC_R3 |
+| PB0 | ADC_IN8, CMP_P0, OPA1_P0 | MCO | TIM1_CH2N | - | - | - | TIM12_ETR | LTDC_G1 | - | TIM3_CH3 | TIM8_CH2N | TIM5_CH4 | - | DFSDM_CKOUT | - | USART6_CTS | LTDC_R3 |
+| PB1 | ADC_IN9, CMP_N0, OPA1_N0 | - | TIM1_CH3N | - | - | - | - | LTDC_G0 | - | TIM3_CH4 | TIM8_CH3N | - | TIM12_CH1 | DFSDM_DATIN1 | - | - | LTDC_R6 |
+| PB3 | - | - | TIM2_CH2 | - | USART8_RX | - | DVP_D5 | TIM12_ETR | - | - | - | CC1 | SPI1_SCK | I2S3_CK, SPI3_SCK | - | - | SDIO_D2 |
+| PB4 | - | - | - | TIM4_ETR | USART8_TX | - | - | USART7_CK | - | TIM3_CH1 | - | CC2 | SPI1_MISO | SPI3_MISO | I2S2_WS, SPI2_NSS | - | SDIO_D3 |
+| PB6 | - | TIM10_CH1 | - | QSPI1_SCSN | - | - | DVP_D5 | USART7_TX | - | TIM4_CH1 | CAN1_RX | I2C1_SCL | I2S3_MCK | I2C4_SCL | USART1_TX | - | CAN2_TX |
+| PB7 | - | TIM10_CH2 | - | USART8_CK | - | - | DVP_VSYNC | - | - | TIM4_CH2 | CAN1_TX | I2C1_SDA | - | I2C4_SDA | USART1_RX | - | - |
+| PB8 | SWCLK, USBHS_DP | - | TIM10_CH3 | SDIO_D4 | - | - | DVP_D6 | LTDC_B6 | - | TIM4_CH3 | - | I2C1_SCL | PIOC_IO0 | I2C4_SCL | - | USART6_RX | CAN1_RX |
+| PB9 | SWDIO, SWIO, USBHS_DM | - | TIM10_CH4 | SDIO_D5 | I2C4_SMBA | - | DVP_D7 | LTDC_B7 | - | TIM4_CH4 | - | I2C1_SDA | I2S2_WS, SPI2_NSS | I2C4_SDA | PIOC_IO1 | USART6_TX | CAN1_TX |
+| PB10 | - | - | TIM2_CH3 | - | QSPI2_SCSXN | - | - | LTDC_G4 | - | TIM9_CH2 | LPTIM2_CH1 | I2C2_SCL | I2S2_CK, SPI2_SCK | - | USART3_TX | SDIO_CMD | USART6_CK |
+| PB11 | - | - | TIM2_CH4 | - | QSPI2_SIOX0 | - | - | LTDC_G5 | - | - | LPTIM2_ETR | I2C2_SDA | - | - | USART3_RX | SDIO_CK | TIM9_CH4 |
+| PB12 | - | - | TIM1_BKIN | LTDC_VSYNC | QSPI2_SIOX1 | - | CMP_OUT | USART7_RX | DVP_PCLK | TIM8_BKIN | - | I2C2_SMBA | I2S2_WS, SPI2_NSS | DFSDM_DATIN1 | USART3_CK | TIM9_CH3 | CAN2_RX |
+| PB13 | - | - | TIM1_CH1N | - | QSPI2_SIOX2 | - | DVP_D2 | USART7_TX | - | TIM8_BKIN2 | LPTIM2_OC | TIM9_ETR | I2S2_CK, SPI2_SCK | DFSDM_CKIN1 | USART3_CTS | DVP_HSYNC | CAN2_TX |
+| PB14 | - | - | TIM1_CH2N | - | QSPI2_SIOX3 | - | USART7_CK | LTDC_CLK | DVP_VSYNC | TIM9_CH1 | TIM8_CH2N | USART1_TX | SPI2_MISO | LTDC_G0 | USART3_RTS | USART6_RTS | SDIO_D0 |
+| PB15 | - | - | TIM1_CH3N | - | - | - | - | LTDC_G7 | - | TIM9_CH2 | TIM8_CH3N | USART1_RX | I2S2_SD, SPI2_MOSI | - | - | USART6_CTS | SDIO_D1 |
+| PC0 | ADC_IN10, HSADC_IN0 | TIM8_BKIN | - | QSPI2_SIO3 | LTDC_G2 | - | - | LTDC_R5 | - | - | DFSDM_CKIN0 | - | PIOC_IO1 | - | SAI_MCLK_A | - | I2C2_SCL |
+| PC1 | ADC_IN11, HSADC_IN1 | TIM8_CH1N | - | QSPI2_SCSXN | SDIO_CK | - | - | LTDC_G5 | - | TIM5_CH1 | DFSDM_DATIN0 | - | I2S2_SD, SPI2_MOSI | - | PIOC_IO0, SAI_SD_A | - | I2C2_SDA |
+| PC2 | ADC_IN12, HSADC_IN2, OPA3_P0 | TIM8_CH2N | - | QSPI2_SIOX0 | - | - | - | - | - | TIM5_CH2 | DFSDM_CKIN1 | - | SPI2_MISO | DFSDM_CKOUT | SAI_SCK_A | PIOC_IO1 | I2C2_SMBA |
+| PC3 | ADC_IN13, HSADC_IN3, OPA3_N0 | TIM8_CH3N | - | QSPI2_SIOX1 | - | - | - | - | - | TIM5_CH3 | DFSDM_DATIN1 | - | I2S2_SD, SPI2_MOSI | - | SAI_FS_A | - | - |
+| PC4 | ADC_IN14, CMP_N1, OPA1_OUT0 | - | - | - | - | - | - | LTDC_R7 | - | - | - | - | - | CAN3_RX | I3C_SCL | - | - |
+| PC6 | - | - | - | - | SWPMI_IO | - | DVP_D0 | LTDC_HSYNC | - | TIM3_CH1 | TIM8_CH1 | - | I2S2_MCK | - | USART4_TX | - | SDIO_D6 |
+| PC7 | - | - | - | - | SWPMI_TX | - | DVP_D1 | LTDC_G6 | - | TIM3_CH2 | TIM8_CH2 | - | - | I2S3_MCK | USART4_RX | - | SDIO_D7 |
+| PC8 | - | - | - | - | SWPMI_RX | - | DVP_D2 | LTDC_G4 | - | TIM3_CH3 | TIM8_CH3 | - | - | TIM9_ETR | USART4_CK | USART7_RTS | - |
+| PC9 | - | - | - | LTDC_G3 | SWPMI_SUP | - | DVP_D3 | LTDC_B2 | SAI_MCLK_B | TIM3_CH4 | TIM8_CH4 | I2C3_SDA | SPI3_MISO | TIM9_CH1 | - | USART7_CTS | QSPI1_SIO0 |
+| PC10 | - | - | - | LTDC_B1 | SWPMI_RX | - | DVP_D8 | LTDC_R2 | LTDC_HSYNC | TIM9_CH2 | - | - | - | I2S3_CK, SPI3_SCK | USART3_TX | USART6_TX | QSPI1_SIO1 |
+| PC11 | - | - | - | - | - | - | DVP_D4 | LTDC_B4 | LTDC_VSYNC | TIM9_CH4 | - | - | - | SPI3_MISO | USART3_RX | USART6_RX | QSPI1_SCSXN |
+| PC12 | - | - | - | - | - | - | DVP_D9 | LTDC_R6 | LTDC_DE | TIM9_CH3 | - | - | - | I2S3_SD, SPI3_MOSI | USART3_CK | USART7_TX | - |
+| PD3 | - | - | - | - | - | - | DVP_D5 | LTDC_G7 | LTDC_R6 | TIM11_CH1 | DFSDM_CKOUT | - | I2S2_CK, SPI2_SCK | - | USART2_CTS | USART6_CK | TIM3_CH1 |
+| PE0 | - | - | LPTIM1_CH1 | - | DVP_D0 | - | TIM11_CH1 | LTDC_B1 | LTDC_B3 | - | - | USART5_TX | - | - | USART4_RTS | - | LTDC_B4 |
+| PE3 | - | TIM8_CH1 | - | - | USART5_TX | - | DVP_D3 | - | - | TIM4_CH1 | TIM12_CH1 | - | PIOC_IO0 | SAI_SD_B | - | - | - |
+| PE4 | - | TIM8_CH2 | - | - | - | - | DVP_D4 | LTDC_B0 | - | TIM4_CH2 | TIM12_CH2 | PIOC_IO1 | SPI4_NSS | SAI_FS_A | - | - | - |
+| PE5 | - | TIM8_CH3 | - | - | - | - | DVP_D6 | LTDC_G0 | - | TIM4_CH3 | TIM12_CH3 | TIM9_CH3 | SPI4_MISO | SAI_SCK_A | - | - | - |
+| PE6 | - | TIM8_CH4 | TIM1_BKIN2 | - | CMP_OUT | - | DVP_D7 | LTDC_G1 | - | TIM4_CH4 | TIM12_CH4 | TIM9_CH4 | SPI4_MOSI | SAI_SD_A | - | USART8_CK | - |
+| PE11 | - | - | TIM1_CH2 | - | - | - | - | LTDC_G3 | - | - | - | - | SPI4_NSS | - | QSPI2_SCSN | SDIO_D3 | - |
+| PE12 | - | - | TIM1_CH3N | - | - | - | CMP_OUT | LTDC_B4 | - | - | - | - | SPI4_SCK | - | QSPI2_SIO0 | SDIO_D4 | - |
+| PE13 | - | - | TIM1_CH3 | - | - | - | - | LTDC_DE | - | TIM12_CH2 | - | - | SPI4_MISO | - | QSPI2_SIO1 | SDIO_D5 | - |
+| PE14 | - | - | TIM1_CH4 | - | - | - | - | LTDC_CLK | - | TIM12_CH3 | I3C_SCL | - | SPI4_MOSI | - | QSPI2_SIO2 | SDIO_D6 | - |
+| PE15 | - | - | TIM1_BKIN | - | USART5_CK | - | CMP_OUT | LTDC_R7 | - | TIM12_CH4 | I3C_SDA | - | - | - | QSPI2_SIO3 | SDIO_D7 | - |
+| PF3 | - | - | - | - | DVP_D9 | - | DVP_VSYNC | LTDC_B0 | LTDC_G5 | CAN3_TX | - | - | SPI1_MISO | - | USART4_RX | - | QSPI1_SIOX2 |
+| PF4 | - | - | LPTIM1_ETR | - | DVP_D8 | - | DVP_D2 | LTDC_B2 | LTDC_G6 | CAN3_RX | - | - | SPI1_NSS | - | USART4_TX | - | LTDC_G3 |
+| PF5 | - | - | LPTIM1_CH2 | - | - | - | DVP_D3 | LTDC_B3 | LTDC_G7 | - | - | USART5_RX | SPI1_SCK | - | - | - | QSPI1_SIOX3 |
 
 </details>
 
@@ -371,7 +371,7 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 | PD3 | SDMMC_STR | - | - | - | - | - | DVP_D5 | LTDC_G7 | LTDC_R6 | TIM11_CH1 | DFSDM_CKOUT | - | I2S2_CK, SPI2_SCK | - | USART2_CTS | USART6_CK | TIM3_CH1 | - | SDMMC_D3 | SDMMC_D3 |
 | PD9 | - | - | - | - | - | - | - | - | - | - | - | - | I3C_SCL | - | USART3_RX | - | - | - | - | - |
 | PD10 | - | - | - | - | - | - | - | LTDC_B3 | - | - | DFSDM_CKOUT | LPTIM2_ETR | I3C_SDA | - | USART3_CK | - | - | SDMMC_STR | - | - |
-| PE9 | OPA2_P0 | - | TIM1_CH1 | QSPI1_SIOX2 | - | - | - | - | - | - | DFSDM_CKOUT | - | - | - | - | SDIO_D1 | - | - | - | - |
+| PE9 | OPA2_P0 | - | TIM1_CH1 | QSPI1_SIOX2 | USART8_RTS | - | - | - | - | - | DFSDM_CKOUT | - | - | - | - | SDIO_D1 | - | - | - | - |
 | PE15 | - | - | TIM1_BKIN | - | USART5_CK | - | CMP_OUT | LTDC_R7 | - | TIM12_CH4 | I3C_SDA | - | - | - | QSPI2_SIO3 | SDIO_D7 | - | - | - | - |
 | PF6 | - | - | - | QSPI1_SIO3 | - | - | TIM11_CH1 | - | - | CAN3_RX | SPI1_NSS | QSPI2_SCK | I3C_SCL | SAI_SD_B | USART8_RX | - | TIM10_CH3 | - | - | - |
 | PF7 | - | - | - | QSPI1_SIO2 | - | - | TIM11_CH2 | - | - | CAN3_TX | SPI1_SCK | QSPI2_SCSN | I3C_SDA | SAI_MCLK_B | USART8_TX | - | TIM10_CH4 | - | - | - |
@@ -538,13 +538,13 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 | PB5 | - | TIM10_ETR | - | - | FSMC_D17, SDRAM_D17 | SDRAM_CKE1 | DVP_D10 | USART7_RX | - | TIM3_CH2 | LTDC_B5 | I2C1_SMBA | SPI1_MOSI | I2C4_SMBA | I2S3_SD, SPI3_MOSI | I2S2_MCK | CAN2_RX | - | - | - |
 | PB6 | - | TIM10_CH1 | FSMC_A5 | QSPI1_SCSN | SDRAM_A5 | SDRAM_CS_N1 | DVP_D5 | USART7_TX | - | TIM4_CH1 | CAN1_RX | I2C1_SCL | I2S3_MCK | I2C4_SCL | USART1_TX | - | CAN2_TX | - | - | - |
 | PB7 | - | TIM10_CH2 | - | USART8_CK | - | FSMC_NADV | DVP_VSYNC | - | - | TIM4_CH2 | CAN1_TX | I2C1_SDA | - | I2C4_SDA | USART1_RX | - | - | - | - | - |
-| PB8 | SWCLK, USBHS_DP | - | TIM10_CH3 | SDIO_D4 | - | FSMC_A3, SDRAM_A3 | DVP_D6 | LTDC_B6 | - | TIM4_CH3 | - | I2C1_SCL | PIOC_IO0 | I2C4_SCL | - | USART6_RX | CAN1_RX | - | - | - |
-| PB9 | SWDIO, SWIO, USBHS_DM | - | TIM10_CH4 | SDIO_D5 | I2C4_SMBA | FSMC_A4, SDRAM_A4 | DVP_D7 | LTDC_B7 | - | TIM4_CH4 | SDRAM_DQM2 | I2C1_SDA | I2S2_WS, SPI2_NSS | I2C4_SDA | PIOC_IO1 | USART6_TX | CAN1_TX | - | - | - |
+| PB8 | SWCLK, USBHS_DP | - | TIM10_CH3 | SDIO_D4 | - | FSMC_A3, SDRAM_A3 | DVP_D6 | LTDC_B6 | - | TIM4_CH3 | SDRAM_CKE0 | I2C1_SCL | PIOC_IO0 | I2C4_SCL | - | USART6_RX | CAN1_RX | - | - | - |
+| PB9 | SWDIO, SWIO, USBHS_DM | - | TIM10_CH4 | SDIO_D5 | I2C4_SMBA | FSMC_A4, SDRAM_A4 | DVP_D7 | LTDC_B7 | - | TIM4_CH4 | SDRAM_CKE1 | I2C1_SDA | I2S2_WS, SPI2_NSS | I2C4_SDA | PIOC_IO1 | USART6_TX | CAN1_TX | - | - | - |
 | PB10 | UHSIF_PORT11 | SDRAM_A5 | TIM2_CH3 | - | QSPI2_SCSXN | FSMC_A10, SDRAM_A10 | - | LTDC_G4 | - | TIM9_CH2 | LPTIM2_CH1 | I2C2_SCL | I2S2_CK, SPI2_SCK | FSMC_A19 | USART3_TX | SDIO_CMD | USART6_CK | SDMMC_D2 | - | - |
 | PB11 | UHSIF_PORT12 | SDRAM_A6 | TIM2_CH4 | - | QSPI2_SIOX0 | FSMC_A11, SDRAM_A11 | - | LTDC_G5 | - | FSMC_A20 | LPTIM2_ETR | I2C2_SDA | - | - | USART3_RX | SDIO_CK | TIM9_CH4 | SDMMC_D3 | - | - |
-| PB12 | UHSIF_PORT13 | SDRAM_A7 | TIM1_BKIN | LTDC_VSYNC | QSPI2_SIOX1 | FSMC_A12, SDRAM_A12 | CMP_OUT | USART7_RX | DVP_PCLK | TIM8_BKIN | FSMC_A21 | I2C2_SMBA | I2S2_WS, SPI2_NSS | DFSDM_DATIN1 | USART3_CK | TIM9_CH3 | CAN2_RX | - | - | - |
-| PB13 | UHSIF_PORT14 | SDRAM_A8 | TIM1_CH1N | ETH_PHY_LED3 | QSPI2_SIOX0 | FSMC_A13 | DVP_D2 | USART7_TX | FSMC_A22 | TIM8_BKIN2 | LPTIM2_OC | TIM9_ETR | I2S2_CK, SPI2_SCK | DFSDM_CKIN1 | USART3_CTS | DVP_HSYNC | CAN2_TX | SDMMC_D0 | - | - |
-| PB14 | UHSIF_PORT15 | FSMC_A23, SDRAM_A9 | TIM1_CH2N | ETH_PHY_LED4 | QSPI2_SIOX1 | FSMC_A14, SDRAM_BA0 | USART7_CK | LTDC_CLK | DVP_VSYNC | TIM9_CH1 | TIM8_CH2N | USART1_TX | SPI2_MISO | LTDC_G0 | USART3_RTS | USART6_RTS | SDIO_D0 | - | - | - |
+| PB12 | UHSIF_PORT13 | SDRAM_A7 | TIM1_BKIN | LTDC_VSYNC | QSPI2_SIOX1 | FSMC_A12, SDRAM_A12 | CMP_OUT, LPTIM2_CH2 | USART7_RX | DVP_PCLK | TIM8_BKIN | FSMC_A21 | I2C2_SMBA | I2S2_WS, SPI2_NSS | DFSDM_DATIN1 | USART3_CK | TIM9_CH3 | CAN2_RX | - | - | - |
+| PB13 | UHSIF_PORT14 | SDRAM_A8 | TIM1_CH1N | ETH_PHY_LED3 | QSPI2_SIOX2 | FSMC_A13 | DVP_D2 | USART7_TX | FSMC_A22 | TIM8_BKIN2 | LPTIM2_OC | TIM9_ETR | I2S2_CK, SPI2_SCK | DFSDM_CKIN1 | USART3_CTS | DVP_HSYNC | CAN2_TX | SDMMC_D0 | - | - |
+| PB14 | UHSIF_PORT15 | FSMC_A23, SDRAM_A9 | TIM1_CH2N | ETH_PHY_LED4 | QSPI2_SIOX3 | FSMC_A14, SDRAM_BA0 | USART7_CK | LTDC_CLK | DVP_VSYNC | TIM9_CH1 | TIM8_CH2N | USART1_TX | SPI2_MISO | LTDC_G0 | USART3_RTS | USART6_RTS | SDIO_D0 | - | - | - |
 | PB15 | - | - | TIM1_CH3N | - | - | FSMC_A15, SDRAM_BA1 | - | LTDC_G7 | - | TIM9_CH2 | TIM8_CH3N | USART1_RX | I2S2_SD, SPI2_MOSI | - | - | USART6_CTS | SDIO_D1 | - | - | - |
 | PC0 | ADC_IN10, HSADC_IN0 | TIM8_BKIN | ETH_MDC | QSPI2_SIO3 | LTDC_G2 | SDRAM_WE_N | - | LTDC_R5 | SDRAM_CAS_N | - | DFSDM_CKIN0 | FSMC_D4 | PIOC_IO1 | - | SAI_MCLK_A | - | I2C2_SCL | UHSIF_CLK | - | - |
 | PC1 | ADC_IN11, HSADC_IN1 | TIM8_CH1N | ETH_MDIO | QSPI2_SCSXN | SDIO_CK | - | - | LTDC_G5 | SDRAM_WE_N | TIM5_CH1 | DFSDM_DATIN0 | FSMC_D5 | I2S2_SD, SPI2_MOSI | - | PIOC_IO0, SAI_SD_A | - | I2C2_SDA | UHSIF_PORT3 | UHSIF_PORT0 | UHSIF_PORT0 |
@@ -552,12 +552,12 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 | PC3 | ADC_IN13, HSADC_IN3, OPA3_N0 | TIM8_CH3N | - | QSPI2_SIOX1 | FSMC_D16, SDRAM_D16 | SDRAM_CKE0 | - | - | SDRAM_DQM1 | TIM5_CH3 | DFSDM_DATIN1 | FSMC_D7 | I2S2_SD, SPI2_MOSI | - | SAI_FS_A | - | - | UHSIF_PORT5 | UHSIF_PORT2 | UHSIF_PORT2 |
 | PC4 | ADC_IN14, CMP_N1, OPA1_OUT0 | - | - | - | - | SDRAM_CS_N0 | - | LTDC_R7 | - | - | - | - | - | CAN3_RX | I3C_SCL | - | - | - | - | - |
 | PC5 | ADC_IN15 | - | - | - | - | SDRAM_CKE0 | CMP_OUT | LTDC_DE | - | - | - | - | - | CAN3_TX | I3C_SDA | - | - | - | - | - |
-| PC6 | SDMMC_D6, UHSIF_PORT25 | SDRAM_D6 | - | - | SWPMI_IO | RGMII_RXD3 | DVP_D0 | LTDC_HSYNC | - | TIM3_CH1 | TIM8_CH1 | FSMC_D8 | I2S2_MCK, SPI2_MCK | - | USART4_TX | - | SDIO_D6 | SDMMC_D6 | - | - |
+| PC6 | SDMMC_D6, UHSIF_PORT25 | SDRAM_D6 | - | - | SWPMI_IO | RGMII_RXD3 | DVP_D0 | LTDC_HSYNC | - | TIM3_CH1 | TIM8_CH1 | FSMC_D8 | I2S2_MCK | - | USART4_TX | - | SDIO_D6 | SDMMC_D6 | - | - |
 | PC7 | SDMMC_D7, UHSIF_PORT26 | SDRAM_D7 | - | - | SWPMI_TX | RGMII_RXD2 | DVP_D1 | LTDC_G6 | - | TIM3_CH2 | TIM8_CH2 | FSMC_D9 | - | I2S3_MCK | USART4_RX | - | SDIO_D7 | SDMMC_D7 | - | - |
 | PC8 | SDMMC_D0, UHSIF_PORT27 | SDRAM_D8 | - | - | SWPMI_RX | RGMII_RXD1 | DVP_D2 | LTDC_G4 | - | TIM3_CH3 | TIM8_CH3 | FSMC_D13 | - | TIM9_ETR | USART4_CK | USART7_RTS | - | - | - | - |
 | PC9 | SDMMC_D1, UHSIF_PORT28 | SDRAM_D9 | - | LTDC_G3 | SWPMI_SUP | RGMII_RXD0 | DVP_D3 | LTDC_B2 | SAI_MCLK_B | TIM3_CH4 | TIM8_CH4 | I2C3_SDA | SPI3_MISO | TIM9_CH1 | FSMC_D14 | USART7_CTS | QSPI1_SIO0 | SDMMC_D1 | - | - |
 | PC10 | SDMMC_D2, UHSIF_PORT32 | FSMC_NBL2, SDRAM_DQM2 | SDRAM_RAS_N | LTDC_B1 | SWPMI_RX | - | DVP_D8 | LTDC_R2 | LTDC_HSYNC | TIM9_CH2 | SDRAM_D24 | - | - | I2S3_CK, SPI3_SCK | USART3_TX | USART6_TX | QSPI1_SIO1 | - | SDMMC_CMD, SDMMC_STS, UHSIF_PORT32 | SDMMC_CMD, SDMMC_STS, UHSIF_PORT32 |
-| PC11 | SDMMC_D3, UHSIF_PORT33 | FSMC_NBL1, SDRAM_DQM1 | - | - | - | - | DVP_D4 | LTDC_B4 | LTDC_VSYNC | TIM9_CH4 | SDRAM_D25 | - | - | SPI3_MISO | USART3_RX | USART6_RX | QSPI1_SCSXN | - | SDMMC_STR, UHSIF_PORT33 | SDMMC_STR, UHSIF_PORT33 |
+| PC11 | SDMMC_D3, UHSIF_PORT33 | FSMC_NBL1, SDRAM_DQM1 | SDRAM_DQM2 | - | - | - | DVP_D4 | LTDC_B4 | LTDC_VSYNC | TIM9_CH4 | SDRAM_D25 | - | - | SPI3_MISO | USART3_RX | USART6_RX | QSPI1_SCSXN | - | SDMMC_STR, UHSIF_PORT33 | SDMMC_STR, UHSIF_PORT33 |
 | PC12 | SDMMC_SDCK, SDMMC_SLVCK, UHSIF_PORT34 | FSMC_NBL0, SDRAM_DQM0 | - | - | - | - | DVP_D9 | LTDC_R6 | LTDC_DE | TIM9_CH3 | SDRAM_D26 | - | - | I2S3_SD, SPI3_MOSI | USART3_CK | USART7_TX | - | - | SDMMC_SDCK, SDMMC_SLVCK, UHSIF_PORT34 | SDMMC_SDCK, SDMMC_SLVCK, UHSIF_PORT34 |
 | PD0 | UHSIF_PORT35 | - | SDRAM_D10 | - | - | FSMC_D2, SDRAM_D2 | - | LTDC_B1 | LTDC_R3 | - | - | - | - | - | - | USART6_RX | CAN1_RX | - | SDMMC_D0, UHSIF_PORT35 | SDMMC_D0, UHSIF_PORT35 |
 | PD1 | UHSIF_PORT36 | - | SDRAM_D11 | - | - | FSMC_D3, SDRAM_D3 | - | - | LTDC_R4 | - | - | - | - | - | - | USART6_TX | CAN1_TX | - | SDMMC_D1, UHSIF_PORT36 | SDMMC_D1, UHSIF_PORT36 |
@@ -581,15 +581,15 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 | PE3 | SERDES_TXP | TIM8_CH1 | SDRAM_DQM1 | - | USART5_TX | FSMC_A19 | DVP_D3 | - | - | TIM4_CH1 | TIM12_CH1 | - | PIOC_IO0 | SAI_SD_B | - | - | SDRAM_CS_N0 | - | - | - |
 | PE4 | SERDES_TXN | TIM8_CH2 | - | - | - | FSMC_A20 | DVP_D4 | LTDC_B0 | - | TIM4_CH2 | TIM12_CH2 | PIOC_IO1 | SPI4_NSS | SAI_FS_A | - | - | SDRAM_CS_N1 | - | - | - |
 | PE5 | SERDES_RXP | TIM8_CH3 | - | SDRAM_D27 | - | FSMC_A21 | DVP_D6 | LTDC_G0 | - | TIM4_CH3 | TIM12_CH3 | TIM9_CH3 | SPI4_MISO | SAI_SCK_A | - | - | SDRAM_CKE0, SDRAM_RAS_N | - | - | - |
-| PE6 | SERDES_RXN | TIM8_CH4 | TIM1_BKIN2 | SDRAM_D28 | CMP_OUT | FSMC_A22 | DVP_D7 | LTDC_G1 | - | TIM4_CH4 | TIM12_CH4 | TIM9_CH4 | SPI4_MOSI | SAI_SD_A | SDRAM_CKE1 | USART8_CK | - | - | - | - |
+| PE6 | SERDES_RXN | TIM8_CH4 | TIM1_BKIN2 | SDRAM_D28 | CMP_OUT | FSMC_A22 | DVP_D7 | LTDC_G1 | - | TIM4_CH4 | TIM12_CH4 | TIM9_CH4 | SPI4_MOSI | SAI_SD_A | SDRAM_DQM2 | USART8_CK | - | - | - | - |
 | PE7 | OPA2_OUT0, UHSIF_PORT2 | - | TIM1_ETR | QSPI1_SIOX0 | - | FSMC_D4, SDRAM_D4 | - | - | - | - | - | - | - | - | USART8_RX | - | - | UHSIF_PORT2 | - | - |
 | PE8 | OPA2_N0, UHSIF_PORT3 | - | TIM1_CH1N | QSPI1_SIOX1 | - | FSMC_D5, SDRAM_D5 | - | - | - | - | - | - | - | - | USART8_TX | SDIO_D0 | - | - | - | - |
-| PE9 | OPA2_P0, UHSIF_PORT4 | - | TIM1_CH1 | QSPI1_SIOX2 | - | FSMC_D6, SDRAM_D6 | - | - | - | - | DFSDM_CKOUT | - | - | - | - | SDIO_D1 | - | - | - | - |
-| PE10 | UHSIF_PORT5 | - | TIM1_CH2N | QSPI1_SIOX3 | - | FSMC_D7, SDRAM_D7 | - | - | SDRAM_BA1 | - | SDRAM_D17 | - | - | - | QSPI2_SCK | SDIO_D2 | - | - | UHSIF_PORT5 | UHSIF_PORT5 |
+| PE9 | OPA2_P0, UHSIF_PORT4 | - | TIM1_CH1 | QSPI1_SIOX2 | USART8_RTS | FSMC_D6, SDRAM_D6 | - | - | - | - | DFSDM_CKOUT | - | - | - | - | SDIO_D1 | - | - | - | - |
+| PE10 | UHSIF_PORT5 | - | TIM1_CH2N | QSPI1_SIOX3 | USART8_CTS | FSMC_D7, SDRAM_D7 | - | - | SDRAM_BA1 | - | SDRAM_D17 | - | - | - | QSPI2_SCK | SDIO_D2 | - | - | UHSIF_PORT5 | UHSIF_PORT5 |
 | PE11 | UHSIF_PORT6 | - | TIM1_CH2 | - | - | FSMC_D8, SDRAM_D8 | - | LTDC_G3 | SDRAM_A0 | - | SDRAM_D18 | - | SPI4_NSS | - | QSPI2_SCSN | SDIO_D3 | - | - | UHSIF_PORT6 | UHSIF_PORT6 |
 | PE12 | UHSIF_PORT7 | - | TIM1_CH3N | - | - | FSMC_D9, SDRAM_D9 | CMP_OUT | LTDC_B4 | SDRAM_A1 | - | SDRAM_D19 | - | SPI4_SCK | - | QSPI2_SIO0 | SDIO_D4 | - | - | UHSIF_PORT7 | UHSIF_PORT7 |
 | PE13 | UHSIF_PORT8 | - | TIM1_CH3 | - | - | FSMC_D10, SDRAM_D10 | - | LTDC_DE | SDRAM_A2 | TIM12_CH2 | - | - | SPI4_MISO | - | QSPI2_SIO1 | SDIO_D5 | - | - | - | - |
-| PE14 | UHSIF_PORT9 | - | TIM1_CH4 | - | - | FSMC_D11, SDRAM_D11 | LTDC_CLK | SDRAM_A3 | - | TIM12_CH3 | I3C_SCL | - | SPI4_MOSI | - | QSPI2_SIO2 | SDIO_D6 | - | - | - | - |
+| PE14 | UHSIF_PORT9 | - | TIM1_CH4 | - | - | FSMC_D11, SDRAM_D11 | - | LTDC_CLK | SDRAM_A3 | TIM12_CH3 | I3C_SCL | - | SPI4_MOSI | - | QSPI2_SIO2 | SDIO_D6 | - | - | - | - |
 | PE15 | UHSIF_PORT10 | - | TIM1_BKIN | - | USART5_CK | FSMC_D12, SDRAM_D12 | CMP_OUT | LTDC_R7 | SDRAM_A4 | TIM12_CH4 | I3C_SDA | - | - | - | QSPI2_SIO3 | SDIO_D7 | - | - | - | - |
 | PF0 | UHSIF_PORT22 | - | - | ETH_PHY_LED0 | LTDC_R1 | DVP_D11 | - | LTDC_R7 | - | SDRAM_D3 | - | SDRAM_CS_N1 | QSPI2_SCK | - | USART4_CTS | - | - | - | - | - |
 | PF1 | UHSIF_PORT23 | - | - | ETH_PHY_LED1 | - | FSMC_INT2 | - | LTDC_CLK | - | SDRAM_D4 | - | - | QSPI2_SCSN | SAI_MCLK_A | USART4_CK | LTDC_B0 | - | - | - | - |
