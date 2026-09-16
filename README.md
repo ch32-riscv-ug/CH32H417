@@ -108,15 +108,15 @@ Only the 15 rows that differ between these 3 products; the other 32 are the same
 
 ## Packages & pinout drawings
 
-Pinout drawings are in the datasheet (chapter *Pinouts*):
+Pinout drawings are in the datasheet (chapter *Pinouts*); each link opens at the page that carries the drawing:
 
 | Package | Products | Datasheet | Outline |
 |---|---|---|---|
-| QFN60X6 | CH32H415REU6 | [en](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF) / [zh](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF) | [drawing](https://raw.githubusercontent.com/ch32-riscv-ug/WCH-common/main/image/package_QFN60X6.png) |
-| QFN60X6 | CH32H416RDU6 | [en](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF) / [zh](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF) | [drawing](https://raw.githubusercontent.com/ch32-riscv-ug/WCH-common/main/image/package_QFN60X6.png) |
-| QFN88 | CH32H417MEU6 | [en](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF) / [zh](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF) | [drawing](https://raw.githubusercontent.com/ch32-riscv-ug/WCH-common/main/image/package_QFN88.png) |
-| QFN128 | CH32H417QEU6 | [en](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF) / [zh](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF) | [drawing](https://raw.githubusercontent.com/ch32-riscv-ug/WCH-common/main/image/package_QFN128.png) |
-| QFN68 | CH32H417WEU6 | [en](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF) / [zh](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF) | [drawing](https://raw.githubusercontent.com/ch32-riscv-ug/WCH-common/main/image/package_QFN68.png) |
+| QFN60X6 | CH32H415REU6 | [en](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF#page=33) / [zh](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF#page=26) | [drawing](https://raw.githubusercontent.com/ch32-riscv-ug/WCH-common/main/image/package_QFN60X6.png) |
+| QFN60X6 | CH32H416RDU6 | [en](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF#page=32) / [zh](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF#page=26) | [drawing](https://raw.githubusercontent.com/ch32-riscv-ug/WCH-common/main/image/package_QFN60X6.png) |
+| QFN88 | CH32H417MEU6 | [en](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF#page=30) / [zh](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF#page=25) | [drawing](https://raw.githubusercontent.com/ch32-riscv-ug/WCH-common/main/image/package_QFN88.png) |
+| QFN128 | CH32H417QEU6 | [en](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF#page=29) / [zh](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF#page=24) | [drawing](https://raw.githubusercontent.com/ch32-riscv-ug/WCH-common/main/image/package_QFN128.png) |
+| QFN68 | CH32H417WEU6 | [en](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF#page=31) / [zh](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF#page=25) | [drawing](https://raw.githubusercontent.com/ch32-riscv-ug/WCH-common/main/image/package_QFN68.png) |
 
 ## Pin maps & alternate functions
 
