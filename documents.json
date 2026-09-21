@@ -22,8 +22,8 @@
       "sources": {
         "en": {
           "file_id": 423,
-          "version": "1.8",
-          "scope": "CH32H417,CH32H416, CH32H415"
+          "version": "1.9",
+          "scope": "CH32H417QEU6, CH32H417MEU6, CH32H417WEU6, CH32H416RDU6, CH32H415REU6"
         },
         "zh": {
           "file_id": 529,
@@ -62,8 +62,8 @@
       "sources": {
         "en": {
           "file_id": 435,
-          "version": "1.7",
-          "scope": "CH32H417,CH32H416,CH32H415"
+          "version": "1.8",
+          "scope": "CH32H417QEU6, CH32H417MEU6, CH32H417WEU6, CH32H416RDU6, CH32H415REU6"
         },
         "zh": {
           "file_id": 532,
