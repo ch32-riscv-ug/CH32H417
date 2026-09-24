@@ -22,9 +22,9 @@ Where these land **without writing a remap register**. SWD is live at reset; the
 
 | Series | Core | ISA | Flash | SRAM | Main clock | VDD | Packages | Products | Official |
 |---|---|---|---|---|---|---|---|---|---|
-| **CH32H415** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 960K | 896K | 160/200 MHz\* | - | QFN60X6 | 1 | [en](https://www.wch-ic.com/products/CH32H415.html) / [zh](https://www.wch.cn/products/CH32H415.html) |
-| **CH32H416** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 480K | 896K | 160/200 MHz\* | - | QFN60X6 | 1 | [en](https://www.wch-ic.com/products/CH32H416.html) / [zh](https://www.wch.cn/products/CH32H416.html) |
-| **CH32H417** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 960K | 896K | 160/200 MHz\* | - | QFN128,QFN68,QFN88 | 3 | [en](https://www.wch-ic.com/products/CH32H417.html) / [zh](https://www.wch.cn/products/CH32H417.html) |
+| **CH32H415** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 960K | 896K | 160 MHz\* | - | QFN60X6 | 1 | [en](https://www.wch-ic.com/products/CH32H415.html) / [zh](https://www.wch.cn/products/CH32H415.html) |
+| **CH32H416** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 480K | 896K | 160 MHz\* | - | QFN60X6 | 1 | [en](https://www.wch-ic.com/products/CH32H416.html) / [zh](https://www.wch.cn/products/CH32H416.html) |
+| **CH32H417** | QingKe V5F + QingKe V3F | RV32IMABCF + RV32IMAFCB | 960K | 896K | 160 MHz\* | - | QFN128,QFN68,QFN88 | 3 | [en](https://www.wch-ic.com/products/CH32H417.html) / [zh](https://www.wch.cn/products/CH32H417.html) |
 
 \* the datasheet states no nominal system main frequency for this series, so the figure is the electrical maximum (HCLK) from the characteristics table -- a limit, not a rating.
 
@@ -40,7 +40,7 @@ Only the 15 rows that differ between these 3 products; the other 32 are the same
 | ADC/TKey Channels | 9+2 | 16+2 | 7+2 |
 | HSADC Channels | 4 | 7 | 4 |
 | DAC (Unit) | 2 | 2 | 1 (DAC2) |
-| OPA | 2 (OPA1/3) | 3 | 2 (OPA1/3) |
+| OPA | 2(OPA1/3) | 3 | 1(OPA1) |
 | USART | 8 | 8 | 7 |
 | SPI/I2S | 4/2 | 4/2 | 3/2 |
 | QSPI | 1 (QSPI2) | 2 | 1 (QSPI2) |
@@ -49,7 +49,7 @@ Only the 15 rows that differ between these 3 products; the other 32 are the same
 | USBFS/OTG_FS | 1 | 1 | - |
 | USBPD Type-C | 1 | 1 | - |
 | FSMC | 1(2) | 1 | 1(2) |
-| SerDes(4) | 1 | 1 | - |
+| SerDes | 1 | 1 | - |
 | SDRAM | 1 | 1 | 1(3) |
 
 <details><summary>All 47 rows</summary>
@@ -76,7 +76,7 @@ Only the 15 rows that differ between these 3 products; the other 32 are the same
 | HSADC Units | 1 | 1 | 1 |
 | HSADC Channels | 4 | 7 | 4 |
 | DAC (Unit) | 2 | 2 | 1 (DAC2) |
-| OPA | 2 (OPA1/3) | 3 | 2 (OPA1/3) |
+| OPA | 2(OPA1/3) | 3 | 1(OPA1) |
 | CMP | 1 | 1 | 1 |
 | DFSDM | 1 | 1 | 1 |
 | RNG | 1 | 1 | 1 |
@@ -89,18 +89,18 @@ Only the 15 rows that differ between these 3 products; the other 32 are the same
 | I2C | 4 | 4 | 4 |
 | I3C | 1 | 1 | 1 |
 | UHSIF | 1 | 1 | 1(1) |
-| CAN(5) | 3 | 3 | 3 |
+| CAN | 3 | 3 | 3 |
 | SDMMC | 1 | 1 | 1 |
 | SDIO | - | 1 | - |
 | SAI | 1 | 1 | 1 |
 | SWPMI | 1 | 1 | 1 |
 | USBFS/OTG_FS | 1 | 1 | - |
-| USBHS (USB 2.0) | 1 | 1 | 1 |
-| USBSS (USB 3.0) | 1 | 1 | 1 |
-| Ethernet(5) | MAC+10/100M PHY | MAC+10/100M PHY | MAC+10/100M PHY |
+| USBHS (USB2.0) | 1 | 1 | 1 |
+| USBSS (USB3.0) | 1 | 1 | 1 |
+| Ethernet | MAC+10/100M PHY | MAC+10/100M PHY | MAC+10/100M PHY |
 | USBPD Type-C | 1 | 1 | - |
 | FSMC | 1(2) | 1 | 1(2) |
-| SerDes(4) | 1 | 1 | - |
+| SerDes | 1 | 1 | - |
 | SDRAM | 1 | 1 | 1(3) |
 | PIOC | 1 | 1 | 1 |
 
@@ -375,9 +375,9 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 | PE15 | - | - | TIM1_BKIN | - | USART5_CK | - | CMP_OUT | LTDC_R7 | - | TIM12_CH4 | I3C_SDA | - | - | - | QSPI2_SIO3 | SDIO_D7 | - | - | - | - |
 | PF6 | - | - | - | QSPI1_SIO3 | - | - | TIM11_CH1 | - | - | CAN3_RX | SPI1_NSS | QSPI2_SCK | I3C_SCL | SAI_SD_B | USART8_RX | - | TIM10_CH3 | - | - | - |
 | PF7 | - | - | - | QSPI1_SIO2 | - | - | TIM11_CH2 | - | - | CAN3_TX | SPI1_SCK | QSPI2_SCSN | I3C_SDA | SAI_MCLK_B | USART8_TX | - | TIM10_CH4 | - | - | - |
-| PF8 | HSADC_IN4 | - | - | QSPI1_SIO0 | - | - | TIM11_CH3 | - | - | - | SPI1_MOSI | QSPI2_SIO0 | - | SAI_SCK_B | USART8_RTS | QSPI2_SIO0 | TIM10_CH1 | - | - | - |
-| PF9 | HSADC_IN5 | - | - | QSPI1_SIO1 | USART8_RTS | - | TIM11_CH4 | - | - | - | SPI1_MISO | QSPI2_SIO1 | - | SAI_FS_B | USART8_CTS | - | TIM10_CH2 | - | - | - |
-| PF10 | HSADC_IN6 | - | - | - | USART8_CTS | - | DVP_D11 | LTDC_DE | - | - | - | QSPI2_SIO2 | - | - | USART8_CK | TIM10_ETR | - | - | - | - |
+| PF8 | HSADC_IN4 | - | - | QSPI1_SIO0 | - | - | TIM11_CH3 | - | - | - | SPI1_MOSI | QSPI2_SIO0 | - | SAI_SCK_B | USART8_RTS | - | TIM10_CH1 | - | - | - |
+| PF9 | HSADC_IN5 | - | - | QSPI1_SIO1 | - | - | TIM11_CH4 | - | - | - | SPI1_MISO | QSPI2_SIO1 | - | SAI_FS_B | USART8_CTS | - | TIM10_CH2 | - | - | - |
+| PF10 | HSADC_IN6 | - | - | - | - | - | DVP_D11 | LTDC_DE | - | - | - | QSPI2_SIO2 | - | - | USART8_CK | TIM10_ETR | - | - | - | - |
 | PF12 | OPA2_N1 | - | - | - | - | - | TIM12_CH3 | - | - | I2C4_SCL | PIOC_IO0 | - | - | - | - | - | - | - | - | - |
 | PF13 | - | - | - | - | DVP_PCLK | - | TIM12_CH4 | - | - | I2C4_SDA | - | - | PIOC_IO1 | - | - | - | - | - | - | - |
 
@@ -580,7 +580,7 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 | PE2 | - | - | - | - | - | FSMC_A23 | DVP_D2 | LTDC_R6 | - | - | - | USART5_RX | SPI4_SCK | SAI_MCLK_A | - | USART6_CK | SDRAM_CLK | - | - | - |
 | PE3 | SERDES_TXP | TIM8_CH1 | SDRAM_DQM1 | - | USART5_TX | FSMC_A19 | DVP_D3 | - | - | TIM4_CH1 | TIM12_CH1 | - | PIOC_IO0 | SAI_SD_B | - | - | SDRAM_CS_N0 | - | - | - |
 | PE4 | SERDES_TXN | TIM8_CH2 | - | - | - | FSMC_A20 | DVP_D4 | LTDC_B0 | - | TIM4_CH2 | TIM12_CH2 | PIOC_IO1 | SPI4_NSS | SAI_FS_A | - | - | SDRAM_CS_N1 | - | - | - |
-| PE5 | SERDES_RXP | TIM8_CH3 | - | SDRAM_D27 | - | FSMC_A21 | DVP_D6 | LTDC_G0 | - | TIM4_CH3 | TIM12_CH3 | TIM9_CH3 | SPI4_MISO | SAI_SCK_A | - | - | SDRAM_CKE0, SDRAM_RAS_N | - | - | - |
+| PE5 | SERDES_RXP | TIM8_CH3 | - | SDRAM_D27 | - | FSMC_A21 | DVP_D6 | LTDC_G0 | - | TIM4_CH3 | TIM12_CH3 | TIM9_CH3 | SPI4_MISO | SAI_SCK_A | - | - | SDRAM_RAS_N | - | - | - |
 | PE6 | SERDES_RXN | TIM8_CH4 | TIM1_BKIN2 | SDRAM_D28 | CMP_OUT | FSMC_A22 | DVP_D7 | LTDC_G1 | - | TIM4_CH4 | TIM12_CH4 | TIM9_CH4 | SPI4_MOSI | SAI_SD_A | SDRAM_DQM2 | USART8_CK | - | - | - | - |
 | PE7 | OPA2_OUT0, UHSIF_PORT2 | - | TIM1_ETR | QSPI1_SIOX0 | - | FSMC_D4, SDRAM_D4 | - | - | - | - | - | - | - | - | USART8_RX | - | - | UHSIF_PORT2 | - | - |
 | PE8 | OPA2_N0, UHSIF_PORT3 | - | TIM1_CH1N | QSPI1_SIOX1 | - | FSMC_D5, SDRAM_D5 | - | - | - | - | - | - | - | - | USART8_TX | SDIO_D0 | - | - | - | - |
@@ -599,9 +599,9 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 | PF5 | UHSIF_PORT45 | - | LPTIM1_CH2 | - | - | FSMC_A0, SDRAM_A0 | DVP_D3 | LTDC_B3 | LTDC_G7 | - | SDRAM_D29 | USART5_RX | SPI1_SCK | - | - | - | QSPI1_SIOX3 | - | UHSIF_PORT45 | UHSIF_PORT45 |
 | PF6 | - | - | - | QSPI1_SIO3 | - | FSMC_D18, SDRAM_D18 | TIM11_CH1 | - | - | CAN3_RX | SPI1_NSS | QSPI2_SCK | I3C_SCL | SAI_SD_B | USART8_RX | - | TIM10_CH3 | - | - | - |
 | PF7 | - | - | - | QSPI1_SIO2 | - | FSMC_D19, SDRAM_D19 | TIM11_CH2 | - | - | CAN3_TX | SPI1_SCK | QSPI2_SCSN | I3C_SDA | SAI_MCLK_B | USART8_TX | - | TIM10_CH4 | - | - | - |
-| PF8 | HSADC_IN4 | - | - | QSPI1_SIO0 | - | FSMC_D20, SDRAM_D20 | TIM11_CH3 | - | - | - | SPI1_MOSI | QSPI2_SIO0 | - | SAI_SCK_B | USART8_RTS | QSPI2_SIO0 | TIM10_CH1 | - | - | - |
-| PF9 | HSADC_IN5 | - | - | QSPI1_SIO1 | USART8_RTS | FSMC_D21, SDRAM_D21 | TIM11_CH4 | - | - | - | SPI1_MISO | QSPI2_SIO1 | - | SAI_FS_B | USART8_CTS | - | TIM10_CH2 | - | - | - |
-| PF10 | HSADC_IN6 | - | - | - | USART8_CTS | FSMC_D22, SDRAM_D22 | DVP_D11 | LTDC_DE | - | - | - | QSPI2_SIO2 | - | - | USART8_CK | TIM10_ETR | - | - | - | - |
+| PF8 | HSADC_IN4 | - | - | QSPI1_SIO0 | - | FSMC_D20, SDRAM_D20 | TIM11_CH3 | - | - | - | SPI1_MOSI | QSPI2_SIO0 | - | SAI_SCK_B | USART8_RTS | - | TIM10_CH1 | - | - | - |
+| PF9 | HSADC_IN5 | - | - | QSPI1_SIO1 | - | FSMC_D21, SDRAM_D21 | TIM11_CH4 | - | - | - | SPI1_MISO | QSPI2_SIO1 | - | SAI_FS_B | USART8_CTS | - | TIM10_CH2 | - | - | - |
+| PF10 | HSADC_IN6 | - | - | - | - | FSMC_D22, SDRAM_D22 | DVP_D11 | LTDC_DE | - | - | - | QSPI2_SIO2 | - | - | USART8_CK | TIM10_ETR | - | - | - | - |
 | PF11 | OPA2_P1, UHSIF_CLK | - | - | - | - | SDRAM_RAS_N | - | - | - | I2C4_SMBA | - | - | - | - | - | - | - | - | - | - |
 | PF12 | OPA2_N1, UHSIF_PORT0 | - | - | - | - | SDRAM_CAS_N | TIM12_CH3 | - | - | I2C4_SCL | PIOC_IO0 | - | - | - | - | - | - | UHSIF_PORT0 | - | - |
 | PF13 | UHSIF_PORT1 | - | - | - | DVP_PCLK | - | TIM12_CH4 | - | - | I2C4_SDA | - | - | PIOC_IO1 | - | - | - | - | UHSIF_PORT1 | - | - |
@@ -637,7 +637,11 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 ## Errata
 
 - The blue-marked sections of the clock tree diagram in the datasheet are not applicable (they only apply to chips whose 5th lot-number digit is greater than 0). *(applies: CH32H415, CH32H416, CH32H417; 5th digit of lot number = 0)*
+- PL[13:0] in R32_GPHA_NLR must be greater than 0 when MODE[2:0] in R32_GPHA_CTLR is 011b. *(applies: CH32H415, CH32H416, CH32H417; 5th digit of lot number < 3)*
+- When the I3C is the master, the IBIF flag is not set on receiving an IBI request without data from a slave; handle such packets as in the official EVT example. *(applies: CH32H415, CH32H416, CH32H417; 5th digit of lot number < 3)*
 - GPHA, Ethernet, SerDes and CAN functions are not provided. *(applies: CH32H415, CH32H416, CH32H417; 5th digit of lot number = 0)*
+- In QSPI memory-mapped mode the mapped addresses may only be used for data access, not for instruction access. *(applies: CH32H415, CH32H416, CH32H417; 5th digit of lot number < 3)*
+- When FSPOL=0 (frame sync active low), the SAI frame-sync signal needs an external pull-up resistor. *(applies: CH32H415, CH32H416, CH32H417; 5th digit of lot number < 3)*
 
 ## EVT examples
 
