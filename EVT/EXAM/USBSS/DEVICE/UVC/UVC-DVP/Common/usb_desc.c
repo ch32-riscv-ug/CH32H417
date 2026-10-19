@@ -155,12 +155,12 @@ const uint8_t  MyCfgDescr_HS[ ] =
 
     /* Dvp_Class-specific VS Format Descriptor--- VS_FORMAT_MJPEG */
     0x0b,                                                   // bLength
-    0x24,                                                   // bDescriptorType£ºCS_INTERFACE
-    0x06,                                                   // bDescriptorSubtype£º VS_FORMAT_MJPEG
-    0x01,                                                   // bFormatIndex£ºFirst (and only) format descriptor
-    0x05,                                                   // bNumFrameDescriptors£º12 frame descriptor for this format follows
-    0x01,                                                   // bmFlags£ºUses fixed size samples
-    0x01,                                                   // bDefaultFrameIndex£ºDefault frame index is 1.
+    0x24,                                                   // bDescriptorType:CS_INTERFACE
+    0x06,                                                   // bDescriptorSubtype: VS_FORMAT_MJPEG
+    0x01,                                                   // bFormatIndex:First (and only) format descriptor
+    0x05,                                                   // bNumFrameDescriptors:12 frame descriptor for this format follows
+    0x01,                                                   // bmFlags:Uses fixed size samples
+    0x01,                                                   // bDefaultFrameIndex:Default frame index is 1.
     0x00,                                                   // bAspectRatioX 
     0x00,                                                   // bAspectRatioY 
     0x00,                                                   // bmInterlaceFlags 
@@ -172,11 +172,11 @@ const uint8_t  MyCfgDescr_HS[ ] =
     0x07,                                                   // bDescriptorSubtype: VS_FRAME_MJPEG 
     0x01,                                                   // bFrameIndex: First (and only) frame descriptor 
     0x00,                                                   // bmCapabilities
-    0x20, 0x03,                                             // Width of frame£º800 
-    0x58, 0x02,                                             // Height of frame£º 600 
+    0x20, 0x03,                                             // Width of frame:800 
+    0x58, 0x02,                                             // Height of frame: 600 
     0x00, 0xA0, 0xBB, 0x0D,                                 // Min bit rate in bits/s 
     0x00, 0xA0, 0xBB, 0x0D,                                 // Max bit rate in bits/s 800*600*2*30fps * 8
-    0x00, 0xA6, 0x0E, 0x00,                                 // Maximum video or still frame size, in bytes£º 800*600*2 
+    0x00, 0xA6, 0x0E, 0x00,                                 // Maximum video or still frame size, in bytes: 800*600*2 
     0x2a, 0x2c, 0x0a, 0x00,                                 // Default frame interval is 15fps
     0x01,                                                   // bFrameIntervalType: Continuous frame interval 
     0x2a, 0x2c, 0x0a, 0x00,                                 // Default frame interval is 15fps 
@@ -188,7 +188,7 @@ const uint8_t  MyCfgDescr_HS[ ] =
     0x02,                                                   // bFrameIndex: First (and only) frame descriptor 
     0x00,                                                   // bmCapabilities
     0x60, 0x01,                                             // Width of 352 
-    0x20, 0x01,                                             // Height of frame£º 288 
+    0x20, 0x01,                                             // Height of frame: 288 
     0x00, 0x80, 0xE6, 0x02,                                 // Min bit rate in bits/s 
     0x00, 0x80, 0xE6, 0x02,                                 // Max bit rate in bits/s 
     0x00, 0x18, 0x03, 0x00,                                 // Maximum video or still frame size, in bytes
@@ -203,7 +203,7 @@ const uint8_t  MyCfgDescr_HS[ ] =
     0x03,                                                   // bFrameIndex: First (and only) frame descriptor 
     0x00,                                                   // bmCapabilities
     0x80, 0x02,                                             // Width of 640 
-    0xe0, 0x01,                                             // Height of frame£º 480 
+    0xe0, 0x01,                                             // Height of frame: 480 
     0x00, 0x00, 0xca, 0x08,                                 // Min bit rate in bits/s 
     0x00, 0x00, 0xca, 0x08,                                 // Max bit rate in bits/s 
     0x00, 0x60, 0x09, 0x00,                                 // Maximum video or still frame size, in bytes
@@ -218,7 +218,7 @@ const uint8_t  MyCfgDescr_HS[ ] =
     0x04,                                                   // bFrameIndex: First (and only) frame descriptor 
     0x00,                                                   // bmCapabilities
     0x00, 0x04,                                             // Width of 1024 
-    0x00, 0x03,                                             // Height of frame£º 768 
+    0x00, 0x03,                                             // Height of frame: 768 
     0x00, 0x00, 0x80, 0x16,                                 // Min bit rate in bits/s 
     0x00, 0x00, 0x80, 0x16,                                 // Max bit rate in bits/s 
     0x00, 0x00, 0x18, 0x00,                                 // Maximum video or still frame size, in bytes
@@ -233,7 +233,7 @@ const uint8_t  MyCfgDescr_HS[ ] =
     0x05,                                                   // bFrameIndex: First (and only) frame descriptor                 
     0x00,                                                   // bmCapabilities            
     0x40, 0x06,                                             // Width of 1600                         
-    0xb0, 0x04,                                             // Height of frame£º 1200             
+    0xb0, 0x04,                                             // Height of frame: 1200             
     0x00, 0x80, 0xee, 0x36,                                 // Min bit rate in bits/s 
     0x00, 0x80, 0xee, 0x36,                                 // Max bit rate in bits/s 
     0x00, 0x98, 0x3a, 0x00,                                 // Maximum video or still frame size, in bytes
@@ -287,7 +287,7 @@ const uint8_t  MyCfgDescr_HS[ ] =
     0x01,                                                   // bFrameIndex: First (and only) frame descriptor                
     0x00,                                                   // bmCapabilities            
     0x80, 0x02,                                             // Width of 640                             
-    0xe0, 0x01,                                             // Height of frame£º 480                 
+    0xe0, 0x01,                                             // Height of frame: 480                 
     0x00, 0x00, 0xca, 0x08,                                 // Min bit rate in bits/s 
     0x00, 0x00, 0xca, 0x08,                                 // Max bit rate in bits/s 
     0x00, 0x60, 0x09, 0x00,                                 // Maximum video or still frame size, in bytes
@@ -302,7 +302,7 @@ const uint8_t  MyCfgDescr_HS[ ] =
     0x02,                                                   // bFrameIndex: First (and only) frame descriptor        
     0x00,                                                   // bmCapabilities            
     0x20, 0x03,                                             // Width of 800                              
-    0x58, 0x02,                                             // Height of frame£º 600                  
+    0x58, 0x02,                                             // Height of frame: 600                  
     0x00, 0xA0, 0xBB, 0x0D,                                 // Min bit rate in bits/s        
     0x00, 0xA0, 0xBB, 0x0D,                                 // Max bit rate in bits/s        
     0x00, 0xA6, 0x0E, 0x00,                                 // Maximum video or still frame size, in bytes        
@@ -317,7 +317,7 @@ const uint8_t  MyCfgDescr_HS[ ] =
     0x03,                                                   // bFrameIndex: First (and only) frame descriptor           
     0x00,                                                   // bmCapabilities                 
     0xb0, 0x00,                                             // Width of 176                                   
-    0x90, 0x00,                                             // Height of frame£º 144                        
+    0x90, 0x00,                                             // Height of frame: 144                        
     0x00, 0xa0, 0xb9, 0x00,                                 // Min bit rate in bits/s        
     0x00, 0xa0, 0xb9, 0x00,                                 // Max bit rate in bits/s        
     0x00, 0xc6, 0x00, 0x00,                                 // Maximum video or still frame size, in bytes        
@@ -332,7 +332,7 @@ const uint8_t  MyCfgDescr_HS[ ] =
     0x04,                                                   // bFrameIndex: First (and only) frame descriptor                        
     0x00,                                                   // bmCapabilities                                  
     0x40, 0x01,                                             // Width of 320                                                            
-    0xf0, 0x00,                                             // Height of frame£º 240                                                 
+    0xf0, 0x00,                                             // Height of frame: 240                                                 
     0x00, 0x80, 0x32, 0x02,                                 // Min bit rate in bits/s        
     0x00, 0x80, 0x32, 0x02,                                 // Max bit rate in bits/s        
     0x00, 0x58, 0x02, 0x00,                                 // Maximum video or still frame size, in bytes        
@@ -347,7 +347,7 @@ const uint8_t  MyCfgDescr_HS[ ] =
     0x05,                                                   // bFrameIndex: First (and only) frame descriptor              
     0x00,                                                   // bmCapabilities                                       
     0x60, 0x01,                                             // Width of 352                                                
-    0x20, 0x01,                                             // Height of frame£º 288                                       
+    0x20, 0x01,                                             // Height of frame: 288                                       
     0x00, 0x80, 0xE6, 0x02,                                 // Min bit rate in bits/s            
     0x00, 0x80, 0xE6, 0x02,                                 // Max bit rate in bits/s            
     0x00, 0x18, 0x03, 0x00,                                 // Maximum video or still frame size, in bytes            
@@ -621,12 +621,12 @@ const uint8_t SS_ConfigDescriptor[ ] =
 
     /* Dvp_Class-specific VS Format Descriptor--- VS_FORMAT_MJPEG */
     0x0b,                                                   // bLength
-    0x24,                                                   // bDescriptorType£ºCS_INTERFACE
-    0x06,                                                   // bDescriptorSubtype£º VS_FORMAT_MJPEG
-    0x01,                                                   // bFormatIndex£ºFirst (and only) format descriptor
-    0x05,                                                   // bNumFrameDescriptors£º12 frame descriptor for this format follows
-    0x01,                                                   // bmFlags£ºUses fixed size samples
-    0x01,                                                   // bDefaultFrameIndex£ºDefault frame index is 1.
+    0x24,                                                   // bDescriptorType:CS_INTERFACE
+    0x06,                                                   // bDescriptorSubtype: VS_FORMAT_MJPEG
+    0x01,                                                   // bFormatIndex:First (and only) format descriptor
+    0x05,                                                   // bNumFrameDescriptors:12 frame descriptor for this format follows
+    0x01,                                                   // bmFlags:Uses fixed size samples
+    0x01,                                                   // bDefaultFrameIndex:Default frame index is 1.
     0x00,                                                   // bAspectRatioX 
     0x00,                                                   // bAspectRatioY 
     0x00,                                                   // bmInterlaceFlags 
@@ -638,11 +638,11 @@ const uint8_t SS_ConfigDescriptor[ ] =
     0x07,                                                   // bDescriptorSubtype: VS_FRAME_MJPEG 
     0x01,                                                   // bFrameIndex: First (and only) frame descriptor 
     0x00,                                                   // bmCapabilities
-    0x20, 0x03,                                             // Width of frame£º800 
-    0x58, 0x02,                                             // Height of frame£º 600 
+    0x20, 0x03,                                             // Width of frame:800 
+    0x58, 0x02,                                             // Height of frame: 600 
     0x00, 0xA0, 0xBB, 0x0D,                                 // Min bit rate in bits/s 
     0x00, 0xA0, 0xBB, 0x0D,                                 // Max bit rate in bits/s 800*600*2*30fps * 8
-    0x00, 0xA6, 0x0E, 0x00,                                 // Maximum video or still frame size, in bytes£º 800*600*2 
+    0x00, 0xA6, 0x0E, 0x00,                                 // Maximum video or still frame size, in bytes: 800*600*2 
     0x2a, 0x2c, 0x0a, 0x00,                                 // Default frame interval is 15fps
     0x01,                                                   // bFrameIntervalType: Continuous frame interval 
     0x2a, 0x2c, 0x0a, 0x00,                                 // Default frame interval is 15fps 
@@ -655,7 +655,7 @@ const uint8_t SS_ConfigDescriptor[ ] =
     0x02,                                                   // bFrameIndex: First (and only) frame descriptor 
     0x00,                                                   // bmCapabilities
     0x60, 0x01,                                             // Width of 352 
-    0x20, 0x01,                                             // Height of frame£º 288 
+    0x20, 0x01,                                             // Height of frame: 288 
     0x00, 0x80, 0xE6, 0x02,                                 // Min bit rate in bits/s 
     0x00, 0x80, 0xE6, 0x02,                                 // Max bit rate in bits/s 
     0x00, 0x18, 0x03, 0x00,                                 // Maximum video or still frame size, in bytes
@@ -670,7 +670,7 @@ const uint8_t SS_ConfigDescriptor[ ] =
     0x03,                                                   // bFrameIndex: First (and only) frame descriptor 
     0x00,                                                   // bmCapabilities
     0x80, 0x02,                                             // Width of 640 
-    0xe0, 0x01,                                             // Height of frame£º 480 
+    0xe0, 0x01,                                             // Height of frame: 480 
     0x00, 0x00, 0xca, 0x08,                                 // Min bit rate in bits/s 
     0x00, 0x00, 0xca, 0x08,                                 // Max bit rate in bits/s 
     0x00, 0x60, 0x09, 0x00,                                 // Maximum video or still frame size, in bytes
@@ -685,7 +685,7 @@ const uint8_t SS_ConfigDescriptor[ ] =
     0x04,                                                   // bFrameIndex: First (and only) frame descriptor 
     0x00,                                                   // bmCapabilities
     0x00, 0x04,                                             // Width of 1024 
-    0x00, 0x03,                                             // Height of frame£º 768 
+    0x00, 0x03,                                             // Height of frame: 768 
     0x00, 0x00, 0x80, 0x16,                                 // Min bit rate in bits/s 
     0x00, 0x00, 0x80, 0x16,                                 // Max bit rate in bits/s 
     0x00, 0x00, 0x18, 0x00,                                 // Maximum video or still frame size, in bytes
@@ -700,7 +700,7 @@ const uint8_t SS_ConfigDescriptor[ ] =
     0x05,                                                   // bFrameIndex: First (and only) frame descriptor                 
     0x00,                                                   // bmCapabilities            
     0x40, 0x06,                                             // Width of 1600                         
-    0xb0, 0x04,                                             // Height of frame£º 1200             
+    0xb0, 0x04,                                             // Height of frame: 1200             
     0x00, 0x80, 0xee, 0x36,                                 // Min bit rate in bits/s 
     0x00, 0x80, 0xee, 0x36,                                 // Max bit rate in bits/s 
     0x00, 0x98, 0x3a, 0x00,                                 // Maximum video or still frame size, in bytes
@@ -754,7 +754,7 @@ const uint8_t SS_ConfigDescriptor[ ] =
     0x01,                                                   // bFrameIndex: First (and only) frame descriptor                
     0x00,                                                   // bmCapabilities            
     0x80, 0x02,                                             // Width of 640                             
-    0xe0, 0x01,                                             // Height of frame£º 480                 
+    0xe0, 0x01,                                             // Height of frame: 480                 
     0x00, 0x00, 0xca, 0x08,                                 // Min bit rate in bits/s 
     0x00, 0x00, 0xca, 0x08,                                 // Max bit rate in bits/s 
     0x00, 0x60, 0x09, 0x00,                                 // Maximum video or still frame size, in bytes
@@ -769,7 +769,7 @@ const uint8_t SS_ConfigDescriptor[ ] =
     0x02,                                                   // bFrameIndex: First (and only) frame descriptor                     
     0x00,                                                   // bmCapabilities                            
     0x40, 0x06,                                             // Width of 1600                                         
-    0xb0, 0x04,                                             // Height of frame£º 1200                     
+    0xb0, 0x04,                                             // Height of frame: 1200                     
     0x00, 0x80, 0xee, 0x36,                                 // Min bit rate in bits/s 
     0x00, 0x80, 0xee, 0x36,                                 // Max bit rate in bits/s 
     0x00, 0x98, 0x3a, 0x00,                                 // Maximum video or still frame size, in bytes
@@ -784,7 +784,7 @@ const uint8_t SS_ConfigDescriptor[ ] =
     0x03,                                                   // bFrameIndex: First (and only) frame descriptor                        
     0x00,                                                   // bmCapabilities                                                
     0x00, 0x05,                                             // Width of 1280                                                             
-    0xC0, 0x03,                                             // Height of frame£º 960                                 
+    0xC0, 0x03,                                             // Height of frame: 960                                 
     0x00, 0xa0, 0x28, 0x23,                                 // Min bit rate in bits/s 
     0x00, 0xa0, 0x28, 0x23,                                 // Max bit rate in bits/s 
     0x00, 0x80, 0x25, 0x00,                                 // Maximum video or still frame size, in bytes
@@ -799,7 +799,7 @@ const uint8_t SS_ConfigDescriptor[ ] =
     0x04,                                                   // bFrameIndex: First (and only) frame descriptor                            
     0x00,                                                   // bmCapabilities                                                            
     0x00,0x04,                                              // Width of 1024                                         
-    0x00,0x03,                                              // Height of frame£º 768                                 
+    0x00,0x03,                                              // Height of frame: 768                                 
     0x00,0x00,0x80,0x16,                                    // Min bit rate in bits/s 
     0x00,0x00,0x80,0x16,                                    // Max bit rate in bits/s 
     0x00,0x00,0x18,0x00,                                    // Maximum video or still frame size, in bytes
@@ -814,7 +814,7 @@ const uint8_t SS_ConfigDescriptor[ ] =
     0x05,                                                   // bFrameIndex: First (and only) frame descriptor              
     0x00,                                                   // bmCapabilities                                       
     0x60, 0x01,                                             // Width of 352                                                
-    0x20, 0x01,                                             // Height of frame£º 288                                       
+    0x20, 0x01,                                             // Height of frame: 288                                       
     0x00, 0x80, 0xE6, 0x02,                                 // Min bit rate in bits/s            
     0x00, 0x80, 0xE6, 0x02,                                 // Max bit rate in bits/s            
     0x00, 0x18, 0x03, 0x00,                                 // Maximum video or still frame size, in bytes            
@@ -847,7 +847,7 @@ const uint8_t SS_ConfigDescriptor[ ] =
     0x00, 0x04,                                             // wMaxPacketSize
     0x01,                                                   // bInterval 
 
-    /* Endpoint Compansion Descriptor */
+    /* Endpoint Companion Descriptor */
     0x06,                                                   // bLength
     0x30,                                                   // bDescriptorType
     0x0b,                                                   // bMaxBurst
@@ -877,7 +877,7 @@ const uint8_t MyManuInfo[ ] =
 /*String Descriptor Product*/
 const uint8_t MyProdInfo[ ] =
 {
-    42,         
+    32,         
     0x03,      
 	'C', 0, 'H', 0, '3', 0, '2', 0, 'H', 0, '4', 0, '1', 0, '7', 0, '_', 0,'C', 0, 'a', 0,
 	'm', 0, 'e', 0, 'r', 0, 'a', 0
