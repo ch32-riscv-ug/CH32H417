@@ -1,7 +1,7 @@
 /********************************** (C) COPYRIGHT  *******************************
 * File Name          : ch32h417.h
 * Author             : WCH
-* Version            : V1.0.7
+* Version            : V1.0.8
 * Date               : 2026/10/18
 * Description        : CH32H417_416_415 Device Peripheral Access Layer Header File.
 *********************************************************************************
@@ -30,7 +30,7 @@
 
 /* CH32H417 Standard Peripheral Library version number */
 #define __CH32H417_STDPERIPH_VERSION_MAIN   (0x01) /* [15:8] main version */
-#define __CH32H417_STDPERIPH_VERSION_SUB    (0x07) /* [7:0] sub version */
+#define __CH32H417_STDPERIPH_VERSION_SUB    (0x08) /* [7:0] sub version */
 #define __CH32H417_STDPERIPH_VERSION        ( (__CH32H417_STDPERIPH_VERSION_MAIN << 8)\
                                              |(__CH32H417_STDPERIPH_VERSION_SUB << 0))
 
