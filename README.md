@@ -2,7 +2,7 @@
 
 <!-- This file is generated from ch32-riscv-ug/ch32-device-data (index/ + evidence/ + pipeline/build/build_readme.py). Edit there, not here. -->
 
-[Choose a part](#product-comparison) &middot; [Pin viewer](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H415) &middot; [Pin maps](#pin-maps--alternate-functions) &middot; [Errata](#errata) &middot; [Examples](#evt-examples) &middot; [Documents](#documents) &middot; [Address map](#address-map)
+[Choose a part](#product-comparison) &middot; [Documents](#documents) &middot; [Pin maps](#pin-maps--alternate-functions) &middot; [Pin viewer](https://ch32-riscv-ug.github.io/ch32-device-data/pins.html?chip=CH32H415) &middot; [Errata](#errata) &middot; [Examples](#evt-examples) &middot; [Address map](#address-map)
 
 ## Quick start
 
@@ -17,6 +17,11 @@ Where these land **without writing a remap register**. SWD is live at reset; the
 | CH32H417 | PB9 | PB8 | none by default[^af] | none by default[^af] |
 
 [^af]: This series selects every pin function through `AFIO->GPIOx_AFLR/AFHR` rather than through AFIO remap, so no USART is routed out until software picks one -- the pads it **can** go on are listed under Pin definitions. The reset value of `GPIOx_AFLR/AFHR` is 0, which selects AF0 (a real function, not "none"), and a pad only drives its alternate function once its GPIO mode is set to alternate.
+
+### Datasheets and reference manual
+
+- CH32H417DS0.PDF (datasheet): [English](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF) · [中文](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF)
+- CH32H417RM.PDF (reference manual): [English](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417RM.PDF) · [中文](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417RM.PDF)
 
 ## Series
 
@@ -105,6 +110,52 @@ Only the 15 rows that differ between these 3 products; the other 32 are the same
 | PIOC | 1 | 1 | 1 |
 
 </details>
+
+## Block diagrams
+
+### CH32H415
+
+<details><summary>Internal block diagram (datasheet)</summary>
+
+<img src="image/architecture_CH32H415.png" alt="CH32H415 internal block diagram" />
+
+</details>
+
+### CH32H416
+
+<details><summary>Internal block diagram (datasheet)</summary>
+
+<img src="image/architecture_CH32H416.png" alt="CH32H416 internal block diagram" />
+
+</details>
+
+### CH32H417
+
+<img src="image/system_CH32H417.png" alt="CH32H417 system block diagram" />
+
+System block diagram from the [WCH product page](https://www.wch-ic.com/products/CH32H417.html).
+
+<details><summary>Internal block diagram (datasheet)</summary>
+
+<img src="image/architecture_CH32H417.png" alt="CH32H417 internal block diagram" />
+
+</details>
+
+## Documents
+
+| Document | Kind | English | 中文 |
+|---|---|---|---|
+| CH32H417DS0.PDF | datasheet | [page](https://www.wch-ic.com/downloads/CH32H417DS0_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF) v1.9 | [page](https://www.wch.cn/downloads/CH32H417DS0_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF) v1.9 |
+| CH32H417RM.PDF | reference-manual | [page](https://www.wch-ic.com/downloads/CH32H417RM_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417RM.PDF) v1.8 | [page](https://www.wch.cn/downloads/CH32H417RM_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417RM.PDF) v1.8 |
+| CH32H417EVT.ZIP | evt | [page](https://www.wch-ic.com/downloads/CH32H417EVT_ZIP.html) [mirror](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT) v1.3 | [page](https://www.wch.cn/downloads/CH32H417EVT_ZIP.html) [mirror](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT) v1.8 |
+
+### Evaluation boards
+
+- board-manual:en: [CH32H417 Evaluation Board Reference-EN.pdf](https://ch32-riscv-ug.github.io/CH32H417/EVT/PUB/CH32H417%20Evaluation%20Board%20Reference-EN.pdf)
+- board-manual:zh: [CH32H417评估板说明书.pdf](https://ch32-riscv-ug.github.io/CH32H417/EVT/PUB/CH32H417%E8%AF%84%E4%BC%B0%E6%9D%BF%E8%AF%B4%E6%98%8E%E4%B9%A6.pdf)
+- schematic-pdf: [CH32H417SCH.pdf](https://ch32-riscv-ug.github.io/CH32H417/EVT/PUB/CH32H417SCH.pdf)
+
+7 board schematics under `EVT/PUB/SCHPCB/`: `CH32H415REU6-R0`, `CH32H416RDU6-R0`, `CH32H417MEU6-R0`, `CH32H417MEU6-UHSIF-R0`, `CH32H417QEU-R1`, `CH32H417QEU6-R0`, `CH32H417WEU6-R0`
 
 ## Packages & pinout drawings
 
@@ -623,17 +674,6 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 
 </details>
 
-## Block diagrams
-
-### CH32H415
-<img src="image/architecture_CH32H415.png" alt="CH32H415 block diagram" />
-
-### CH32H416
-<img src="image/architecture_CH32H416.png" alt="CH32H416 block diagram" />
-
-### CH32H417
-<img src="image/architecture_CH32H417.png" alt="CH32H417 block diagram" />
-
 ## Errata
 
 - The blue-marked sections of the clock tree diagram in the datasheet are not applicable (they only apply to chips whose 5th lot-number digit is greater than 0). *(applies: CH32H415, CH32H416, CH32H417; 5th digit of lot number = 0)*
@@ -648,22 +688,6 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 253 routines in [EVT/EXAM](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM):
 
 [ADC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/ADC) 12 · [APPLICATION](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/APPLICATION) 14 · [CAN](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/CAN) 3 · [CPU](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/CPU) 20 · [CRC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/CRC) 1 · [DAC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/DAC) 6 · [DFSDM](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/DFSDM) 11 · [DMA](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/DMA) 4 · [DVP](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/DVP) 3 · [ECDC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/ECDC) 2 · [ETH](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/ETH) 19 · [EXTI](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/EXTI) 1 · [FLASH](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/FLASH) 2 · [FMC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/FMC) 9 · [GPHA](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/GPHA) 2 · [GPIO](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/GPIO) 1 · [HSADC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/HSADC) 1 · [I2C](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/I2C) 6 · [I2S](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/I2S) 3 · [I3C](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/I3C) 3 · [IAP](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/IAP) 1 · [IWDG](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/IWDG) 1 · [LPTIM](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/LPTIM) 2 · [LTDC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/LTDC) 1 · [OPA](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/OPA) 2 · [PIOC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/PIOC) 18 · [PWR](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/PWR) 7 · [QSPI](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/QSPI) 3 · [RCC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/RCC) 3 · [RNG](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/RNG) 1 · [RTC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/RTC) 2 · [SAI](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/SAI) 1 · [SDIO](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/SDIO) 2 · [SDMMC](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/SDMMC) 4 · [SPI](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/SPI) 7 · [SWPMI](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/SWPMI) 2 · [SerDes](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/SerDes) 2 · [TIM](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/TIM) 15 · [TKey](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/TKey) 3 · [UHSIF](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/UHSIF) 1 · [USART](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/USART) 8 · [USB](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/USB) 41 · [USBPD](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/USBPD) 2 · [WWDG](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT/EXAM/WWDG) 1
-
-## Documents
-
-| Document | Kind | English | 中文 |
-|---|---|---|---|
-| CH32H417DS0.PDF | datasheet | [page](https://www.wch-ic.com/downloads/CH32H417DS0_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF) v1.9 | [page](https://www.wch.cn/downloads/CH32H417DS0_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF) v1.9 |
-| CH32H417RM.PDF | reference-manual | [page](https://www.wch-ic.com/downloads/CH32H417RM_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417RM.PDF) v1.8 | [page](https://www.wch.cn/downloads/CH32H417RM_PDF.html) [mirror](https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417RM.PDF) v1.8 |
-| CH32H417EVT.ZIP | evt | [page](https://www.wch-ic.com/downloads/CH32H417EVT_ZIP.html) [mirror](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT) v1.3 | [page](https://www.wch.cn/downloads/CH32H417EVT_ZIP.html) [mirror](https://github.com/ch32-riscv-ug/CH32H417/tree/main/EVT) v1.8 |
-
-### Evaluation boards
-
-- board-manual:en: [CH32H417 Evaluation Board Reference-EN.pdf](https://github.com/ch32-riscv-ug/CH32H417/blob/main/EVT/PUB/CH32H417%20Evaluation%20Board%20Reference-EN.pdf)
-- board-manual:zh: [CH32H417评估板说明书.pdf](https://github.com/ch32-riscv-ug/CH32H417/blob/main/EVT/PUB/CH32H417%E8%AF%84%E4%BC%B0%E6%9D%BF%E8%AF%B4%E6%98%8E%E4%B9%A6.pdf)
-- schematic-pdf: [CH32H417SCH.pdf](https://github.com/ch32-riscv-ug/CH32H417/blob/main/EVT/PUB/CH32H417SCH.pdf)
-
-7 board schematics under `EVT/PUB/SCHPCB/`: `CH32H415REU6-R0`, `CH32H416RDU6-R0`, `CH32H417MEU6-R0`, `CH32H417MEU6-UHSIF-R0`, `CH32H417QEU-R1`, `CH32H417QEU6-R0`, `CH32H417WEU6-R0`
 
 ## Reference
 
