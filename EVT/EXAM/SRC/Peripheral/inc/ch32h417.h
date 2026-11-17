@@ -1,8 +1,8 @@
 /********************************** (C) COPYRIGHT  *******************************
 * File Name          : ch32h417.h
 * Author             : WCH
-* Version            : V1.0.8
-* Date               : 2026/10/18
+* Version            : V1.0.9
+* Date               : 2026/11/05
 * Description        : CH32H417_416_415 Device Peripheral Access Layer Header File.
 *********************************************************************************
 * Copyright (c) 2025 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -1685,7 +1685,7 @@ typedef struct
 #define FMC_R_BASE            (HBPERIPH_BASE + 0x25400)
 #define FMC_Bank1_R_BASE      (FMC_R_BASE + 0x0000)
 #define FMC_Bank1E_R_BASE     (FMC_R_BASE + 0x0104)
-#define FMC_Bank3_R_BASE      (FMC_R_BASE + 0x0080)
+#define FMC_Bank3_R_BASE      (FMC_R_BASE + 0x0060)
 #define FMC_Bank5_6_R_BASE    (FMC_R_BASE + 0x0140)
 
 #define DVP_BASE              (HBPERIPH_BASE + 0x25800)

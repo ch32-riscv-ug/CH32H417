@@ -1,0 +1,11 @@
+E:\CH\临时工作\新增WCHGUI的EVT工程\INTERNAL_FLASH\CH32H417QEU\CH32H417QEU.wvsln:
+BuildOrder=CH32H417QEU_V3F,CH32H417QEU_V5F
+-arm:${eclipse_home}\toolchain\arm-none-eabi-gcc\bin
+-build:${eclipse_home}\toolchain\Build Tools\bin
+-openocd name:openocd.exe
+-openocd path:${eclipse_home}\toolchain\OpenOCD\bin
+-rv:${eclipse_home}\toolchain\RISC-V Embedded GCC\bin
+E:\CH\临时工作\新增WCHGUI的EVT工程\INTERNAL_FLASH\CH32H417QEU\V3F
+..\V3F
+E:\CH\临时工作\新增WCHGUI的EVT工程\INTERNAL_FLASH\CH32H417QEU\V5F
+..\V5F

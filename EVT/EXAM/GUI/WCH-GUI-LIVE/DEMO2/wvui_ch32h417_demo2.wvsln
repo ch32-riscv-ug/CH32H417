@@ -1,0 +1,11 @@
+E:\司工项目\GUI\wvui_ch32h417_demo2\wvui_ch32h417_demo2.wvsln:
+BuildOrder=wvui_ch32h417_demo2_V3F,wvui_ch32h417_demo2_V5F
+-arm:${eclipse_home}\toolchain\arm-none-eabi-gcc\bin
+-build:${eclipse_home}\toolchain\Build Tools\bin
+-openocd name:openocd.exe
+-openocd path:${eclipse_home}\toolchain\OpenOCD\bin
+-rv:${eclipse_home}\toolchain\RISC-V Embedded GCC\bin
+E:\司工项目\GUI\wvui_ch32h417_demo2\V3F
+..\V3F
+E:\司工项目\GUI\wvui_ch32h417_demo2\V5F
+..\V5F

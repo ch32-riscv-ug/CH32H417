@@ -1,5 +1,5 @@
 
-南京沁恒微电子股份有限公司 2026.10
+南京沁恒微电子股份有限公司 2026.11
 最新资料请到我们的网站上查询
 https://wch.cn
 
@@ -36,7 +36,6 @@ https://wch.cn
   |      |      |      |      |-- Internal_Temperature：内部温度传感器例程
   |      |      |      |-- APPLICATION
   |      |      |      |      |-- SoftUART：I/O口模拟串口例程 
-  |      |      |      |      |-- LTDC_LVGL：使用LTDC 在屏幕上显示动画
   |      |      |      |      |-- FATFS_eMMC：八线操作EMMC卡移植文件读写系统FATFS
   |      |      |      |      |-- Betaflight：H41x Betaflight 库
   |      |      |      |      |-- CherryUSB: CherryUSB仓库地址及简介
@@ -144,7 +143,22 @@ https://wch.cn
   |      |      |      |      |-- SDRAM-32bit_DMA：FSMC通过DMA的方式操作32bit_SDRAM例程   
   |      |      |      |      |-- SDRAM：FSMC通过DMA操作NOR_SRAM例程  
   |      |      |      |-- GPIO
-  |      |      |      |      |-- GPIO_Toggle：GPIO例程 
+  |      |      |      |      |-- GPIO_Toggle：GPIO例程
+  |      |      |      |-- GUI
+  |      |      |      |      |-- LTDC_LVGL：使用LTDC 在屏幕上显示动画
+  |      |      |      |      |-- WCH-GUI-FLASH：WCH-GUI-FLASH例程(CPU占用率低) 
+  |      |      |      |      |      |--GUI_ExternalFlash: WCH-GUI-FLASH 使用外部flash的例程
+  |      |      |      |      |      |--GUI_Onflash：WCH-GUI-FLASH 使用内部flash的例程
+  |      |      |      |      |      |--WCHGUI_Lib: WCH-GUI-FLASH 的核心库(CPU占用率低)
+  |      |      |      |      |      |--DOC
+  |      |      |      |      |      |      |--片外FLASH下载操作说明.pdf
+  |      |      |      |      |      |      |--沁恒WCHGUI软件说明文档.pdf
+  |      |      |      |      |-- WCH-GUI-LIVE：WCH-GUI-LIVE例程(节省存储资源) 
+  |      |      |      |      |      |--DEMO1: WCH-GUI-LIVE的基础例程
+  |      |      |      |      |      |--DEMO2: WCH-GUI-LIVE的复杂例程
+  |      |      |      |      |      |--WVUI_Lib: WCH-GUI-LIVE 的核心库(节省存储资源)
+  |      |      |      |      |      |--DOC
+  |      |      |      |      |      |      |--WCH-GUI-Live库参考手册.pdf  
   |      |      |      |-- GPHA
   |      |      |      |      |-- GPHA_M2M_WithLCD：GPHA 将查色表图像展开并与纯色背景混合最终显示在LCD上
   |      |      |      |      |-- GPHA_R2M：GPHA纯色填充与软件填充对比

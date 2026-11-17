@@ -2,7 +2,7 @@
 * File Name          : ch32h417_fmc.c
 * Author             : WCH
 * Version            : V1.0.1
-* Date               : 2026/10/18
+* Date               : 2026/11/05
 * Description        : This file provides all the FMC firmware functions.
 *********************************************************************************
 * Copyright (c) 2025 Nanjing Qinheng Microelectronics Co., Ltd.
@@ -117,6 +117,12 @@ void FMC_NORSRAMInit(FMC_NORSRAMInitTypeDef *FMC_NORSRAMInitStruct)
         FMC_NORSRAMInitStruct->FMC_CPSIZE|
         FMC_NORSRAMInitStruct->FMC_BMP;
 
+if(FMC_NORSRAMInitStruct->FMC_BurstAccessMode|| FMC_NORSRAMInitStruct->FMC_WriteBurst)
+{
+     FMC_Bank1->BTCR[0]|=FMC_NORSRAMInitStruct->FMC_BurstAccessMode|FMC_NORSRAMInitStruct->FMC_WriteBurst|
+     FMC_NORSRAMInitStruct->FMC_CPSIZE| FMC_NORSRAMInitStruct->FMC_MemoryDataWidth |FMC_NORSRAMInitStruct->FMC_WaitSignalActive;
+     
+}
     if(FMC_NORSRAMInitStruct->FMC_MemoryType == FMC_MemoryType_NOR)
     {
         FMC_Bank1->BTCR[FMC_NORSRAMInitStruct->FMC_Bank] |= (uint32_t)BCR_FACCEN_Set;
@@ -131,6 +137,12 @@ void FMC_NORSRAMInit(FMC_NORSRAMInitTypeDef *FMC_NORSRAMInitStruct)
         (FMC_NORSRAMInitStruct->FMC_ReadWriteTimingStruct->FMC_DataLatency << 24) |
         FMC_NORSRAMInitStruct->FMC_ReadWriteTimingStruct->FMC_AccessMode;
 
+if(FMC_NORSRAMInitStruct->FMC_BurstAccessMode|| FMC_NORSRAMInitStruct->FMC_WriteBurst)
+{
+    FMC_Bank1->BTCR[1] =
+        (uint32_t)(FMC_NORSRAMInitStruct->FMC_ReadWriteTimingStruct->FMC_CLKDivision << 20) |
+        (FMC_NORSRAMInitStruct->FMC_ReadWriteTimingStruct->FMC_DataLatency << 24) ;
+}
     if(FMC_NORSRAMInitStruct->FMC_ExtendedMode == FMC_ExtendedMode_Enable)
     {
         FMC_Bank1E->BWTR[FMC_NORSRAMInitStruct->FMC_Bank] =
@@ -143,6 +155,8 @@ void FMC_NORSRAMInit(FMC_NORSRAMInitTypeDef *FMC_NORSRAMInitStruct)
     else
     {
         FMC_Bank1E->BWTR[FMC_NORSRAMInitStruct->FMC_Bank] = 0x0FFFFFFF;
+
+
     }
         FMC_Bank1->BTCR[0]|=(1<<31); 
 }

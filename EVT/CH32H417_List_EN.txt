@@ -1,5 +1,5 @@
 
-Nanjing Qinheng Microelectronics Co., Ltd. 2026.10
+Nanjing Qinheng Microelectronics Co., Ltd. 2026.11
 
 https://wch-ic.com
 
@@ -36,7 +36,6 @@ Directory
   |      |      |      |      |-- Internal_Temperature: Internal temperature sensor routine 
   |      |      |      |-- APPLICATION
   |      |      |      |      |-- SoftUART: I/O port simulation serial port routine 
-  |      |      |      |      |-- LTDC_LVGL: use LTDC driver to display some animations on the LCD
   |      |      |      |      |-- FATFS_eMMC: Eight-line operation EMMC card porting file read-write system FATFS
   |      |      |      |      |-- Betaflight: H41x Betaflight Library
   |      |      |      |      |-- CherryUSB: CherryUSB repository address and introduction
@@ -145,6 +144,21 @@ Directory
   |      |      |      |      |-- SDRAM: FSMC operates NOR_SRAM routine through DMA
   |      |      |      |-- GPIO
   |      |      |      |      |-- GPIO_Toggle:GPIO routine 
+  |      |      |      |-- GUI
+  |      |      |      |      |-- LTDC_LVGL: use LTDC driver to display some animations on the LCD
+  |      |      |      |      |-- WCH-GUI-FLASH：WCH-GUI-FLASH routine(Low CPU usage) 
+  |      |      |      |      |      |--GUI_ExternalFlash: WCH-GUI-FLASH use external flash routine
+  |      |      |      |      |      |--GUI_Onflash：WCH-GUI-FLASH use internal flash routine
+  |      |      |      |      |      |--WCHGUI_Lib: WCH-GUI-FLASH core library (with low CPU usage)
+  |      |      |      |      |      |--DOC
+  |      |      |      |      |      |      |--Instructions for downloading external FLASH.pdf
+  |      |      |      |      |      |      |--WCHGUI software documentation.pdf
+  |      |      |      |      |-- WCH-GUI-LIVE：WCH-GUI-LIVE routine(Save storage resources)
+  |      |      |      |      |      |--DEMO1: WCH-GUI-LIVE basic routine
+  |      |      |      |      |      |--DEMO2: WCH-GUI-LIVE complex routine
+  |      |      |      |      |      |--WVUI_Lib: WCH-GUI-LIVE core library(with save storage resources)
+  |      |      |      |      |      |--DOC
+  |      |      |      |      |      |      |--WCH-GUI-Live library Reference Manual.pdf 
   |      |      |      |-- GPHA
   |      |      |      |      |-- GPHA_M2M_WithLCD: The GPHA routine expands the color lookup table image, blends it with a solid color background, and finally displays it on the LCD
   |      |      |      |      |-- GPHA_R2M: Comparison between GPHA solid color filling and software filling
@@ -160,10 +174,10 @@ Directory
   |      |      |      |-- I2S 
   |      |      |      |      |-- HostRx_SlaveTx: I2S master receiver slave transmitter routine
   |      |      |      |      |-- I2S_DMA: I2S master transmitter slave receiver DMA routine
-  |      |      |      |      |-- I3C_Controller_Check_ZeroIBI: The I3C controller receives an IBI of 0 bytes routine
   |      |      |      |-- I3C
   |      |      |      |      |-- I3C_DMA_Controller: I3C master routine
   |      |      |      |      |-- I3C_DMA_Target: I3C slave routine
+  |      |      |      |      |-- I3C_Controller_Check_ZeroIBI: The I3C controller receives an IBI of 0 bytes routine
   |      |      |      |-- IAP: IAP upgrade routine-built-in Hex to Bin tool and IAP upgrade tool  
   |      |      |      |      |-- USB_UART: USB+UART IAP routine  
   |      |      |      |-- IWDG
