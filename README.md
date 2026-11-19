@@ -706,6 +706,7 @@ Pin functions (filterable): [ALL](https://ch32-riscv-ug.github.io/ch32-device-da
 | FLASH | `0x08000000` | memory |
 | OB | `0x1ffff800` | memory |
 | SRAM | `0x20100000` | memory |
+| PIOC_SRAM | `0x50040000` | memory |
 
 `link-origin` is what the EVT linker scripts use; the `memory` row for FLASH is the address the device header states. Both windows are real -- CH32V307 answers at `0x08000000` and at `0x00000000`.
 
